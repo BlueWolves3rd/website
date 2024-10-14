@@ -14,19 +14,19 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/thirdStrike",
+        path: "/",
         element: <Home />,
       },
       {
-        path: "/thirdStrike/guides",
+        path: "/guides",
         element: <Guides />,
       },
       {
-        path: "/thirdStrike/contato",
+        path: "/contato",
         element: <Contato />,
       },
       {
-        path: "/thirdStrike/guides/ken",
+        path: "/guides/ken",
         element: (
           <MarkdownStyle>
             <KenGuide />

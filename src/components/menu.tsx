@@ -29,9 +29,9 @@ const Menu = () => {
         </div>
 
         <div className="flex flex-row mr-[-7rem] font-bold cursor-pointer gap-12 text-[3.5pt]">
-          <ButtonMenu to={"/thirdStrike/faq"}>FAQ</ButtonMenu>
-          <ButtonMenu to={"/thirdStrike/sobrenos"}>SOBRE NÒS</ButtonMenu>
-          <ButtonMenu to={"/thirdStrike/contato"}>CONTATO</ButtonMenu>
+          <ButtonMenu to={"/faq"}>FAQ</ButtonMenu>
+          <ButtonMenu to={"/sobrenos"}>SOBRE NÒS</ButtonMenu>
+          <ButtonMenu to={"/contato"}>CONTATO</ButtonMenu>
         </div>
       </div>
     </div>
