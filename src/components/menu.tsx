@@ -20,7 +20,7 @@ const Menu = () => {
       <div className="flex flex-row justify-between items-center 2xl:w-[1320px]">
         <div>
           <Link
-            to="/thirdStrike"
+            to="/"
             className="ml-4 cursor-pointer text-2xl flex flex-row gap-6 items-center"
           >
             <img src={bwLogo} className="w-20" />
