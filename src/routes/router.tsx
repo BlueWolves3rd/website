@@ -1,11 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./root";
-import Guides from "../pages/guides";
 import { ErrorPage } from "../pages/error";
-import { MarkdownStyle } from "../components/markdownStyle";
-import KenGuide from "../pages/kenGuide.mdx";
 import { Contato } from "../pages/contato";
 import { Home } from "../pages/home";
+import { SobreNos } from "../pages/sobreNos.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,20 +16,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/guides",
-        element: <Guides />,
+        path: "/sobrenos",
+        element: <SobreNos />,
       },
       {
         path: "/contato",
         element: <Contato />,
-      },
-      {
-        path: "/guides/ken",
-        element: (
-          <MarkdownStyle>
-            <KenGuide />
-          </MarkdownStyle>
-        ),
       },
     ],
   },
