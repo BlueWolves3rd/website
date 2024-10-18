@@ -21,8 +21,8 @@ export const SobreNos = () => {
       </div>
 
       <div className="text-white flex flex-col gap-12 font-metropolis mt-16 px-32 mb-12">
-        <div className="flex flex-row h-[350px] p-4">
-          <p className="text-5xl w-1/2">2021</p>
+        <div className="flex flex-row h-[40vw] p-32">
+          <p className="text-6xl w-1/2">2021</p>
           <div className="w-1/2 text-xl">
             Após vários anos em atividade, a comunidade de 3rd Strike estava em
             inatividade. Por isso, o ShadowBurn, jogador de Gouki, pediu para o
@@ -31,8 +31,8 @@ export const SobreNos = () => {
           </div>
         </div>
 
-        <div className="flex flex-row h-[350px] bg-white text-black p-4">
-          <p className="text-5xl w-1/2">PROBLEMAS</p>
+        <div className="flex flex-row h-[40vw] text-white p-32">
+          <p className="text-6xl w-1/2">PROBLEMAS</p>
           <div className="w-1/2 text-xl">
             A comunidade do jogo no Brasil sofria de vários problemas e, dentre
             seus objetivos, o Blue Wolves visava resolvê-los: Unir os jogadores
@@ -40,8 +40,8 @@ export const SobreNos = () => {
           </div>
         </div>
 
-        <div className="flex flex-row h-[350px] p-4">
-          <p className="text-5xl w-1/2">HOJE</p>
+        <div className="flex flex-row h-[40vw] p-32">
+          <p className="text-6xl w-1/2">HOJE</p>
           <div className="w-1/2 text-xl">
             Cada vez maior, o Blue Woves revitalizou a comunidade de 3rd Strike.
             Continuamos dedicados em apoiar o jogo que amamos e os jogadores que
