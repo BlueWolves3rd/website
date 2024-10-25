@@ -14,7 +14,7 @@ const ButtonMenu = ({ to, children }: { to: string; children: string }) => {
 const Menu = () => {
   return (
     <div
-      className="font-bold text-white w-screen h-20 py-3 flex top-0
+      className="font-bold text-white w-full h-20 py-3 flex top-0
             items-center shadow-md sticky bg-[#0b0b3d] font-pRegular justify-center z-[100]"
     >
       <div className="flex flex-row justify-between items-center 2xl:w-[1320px]">
