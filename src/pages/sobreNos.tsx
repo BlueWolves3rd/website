@@ -18,11 +18,11 @@ export const SobreNos = () => {
         <img src={bwLogo} className="w-[700px] absolute" />
       </div>
 
-      <div className="flex flex-col font-metropolis mb-12 mx-44 gap-16 mt-16">
-        <div className="flex flex-row h-[600px]">
+      <div className="flex flex-col font-metropolis mb-12  gap-16 mt-16">
+        <div className="flex flex-row h-[600px] mx-44">
           <div
             className="text-6xl w-1/2 text-center flex items-center
-                        justify-center relative"
+                        justify-center relative border-[3px] border-gray-600"
           >
             <img
               src={bgImage2021}
@@ -33,7 +33,10 @@ export const SobreNos = () => {
             <p className="z-50 text-8xl text-black">2021</p>
           </div>
 
-          <div className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl">
+          <div
+            className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl
+                        items-center justify-center"
+          >
             A cena brasileira de 3rd Strike estava inativa. Frustrado com isso,
             um dos únicos jogadores restantes, Shadow, entrou em contato com o
             Scarecrow (líder/dono do BW). Num período de motivação temporária,
@@ -46,7 +49,7 @@ export const SobreNos = () => {
         </div>
 
         <div
-          className="flex flex-row h-[600px] text-black relative"
+          className="flex flex-row h-[600px] text-white relative"
           style={{
             backgroundImage: `url(${bgImageProblemas})`,
             backgroundSize: "cover",
@@ -54,7 +57,7 @@ export const SobreNos = () => {
           }}
         >
           <div
-            className="text-xl bg-white bg-opacity-40 w-1/2 flex items-center
+            className="text-xl bg-[#02011e] bg-opacity-80 w-1/2 flex items-center
                         justify-center z-50 py-8 px-24 leading-[2.25rem]"
           >
             No passado, o jogo havia sofrido com vários dilemas. Jogadores não
@@ -68,22 +71,25 @@ export const SobreNos = () => {
           </div>
 
           <p
-            className="text-6xl bg-white bg-opacity-40 w-1/2 text-center
-                        flex items-center justify-center z-50 text-black"
+            className="text-6xl bg-[#02011e] bg-opacity-80 w-1/2 text-center
+                        flex items-center justify-center z-50"
           >
             PROBLEMAS
           </p>
         </div>
 
-        <div className="flex flex-row h-[600px]">
-          <div className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl">
+        <div className="flex flex-row h-[600px] mx-44">
+          <div
+            className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl
+                        justify-center items-center"
+          >
             Cada vez maior, o Blue Wolves revitalizou a comunidade brasileira de
             3rd Strike. Com diversos projetos cada vez mais ambiciosos,
             continuamos apoiando o jogo que amamos!
           </div>
           <div
             className="text-6xl w-1/2 text-center flex items-center
-                        justify-center relative"
+                        justify-center relative border-[3px] border-gray-600"
           >
             <img
               src={bgImageHoje}
