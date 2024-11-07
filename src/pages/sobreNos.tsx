@@ -4,8 +4,6 @@ import bgImageHoje from "../assets/sobreNos/20th.png";
 import bgImage2021 from "../assets/sobreNos/ryu-vs-sagat-first-battle-drawn-by-motoki-yoshihara.jpg";
 import bgImageProblemas from "../assets/sobreNos/ryu-carrying.png";
 
-//<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60" />
-
 export const SobreNos = () => {
   return (
     <div className="relative w-screen">
@@ -22,7 +20,7 @@ export const SobreNos = () => {
         <div className="flex flex-row h-[600px] mx-44">
           <div
             className="text-6xl w-1/2 text-center flex items-center
-                        justify-center relative border-[3px] border-white"
+                        justify-center relative border-[3px] border-gray-600"
           >
             <img
               src={bgImage2021}
