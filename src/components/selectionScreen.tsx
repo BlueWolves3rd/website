@@ -4,10 +4,7 @@ import interfaceImg from "../assets/character selection/interface.png";
 import selector from "../assets/selector.gif";
 import { useState } from "react";
 
-const CharacterIcon = ({
-  setCharacterData,
-  data,
-}: {
+interface CharacterIconProps {
   setCharacterData: React.Dispatch<
     React.SetStateAction<
       | {
@@ -23,7 +20,9 @@ const CharacterIcon = ({
     top: string;
     left: string;
   };
-}) => {
+}
+
+const CharacterIcon = ({ data, setCharacterData }: CharacterIconProps) => {
   const onMouseOverHandler = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setCharacterData(data);
@@ -51,6 +50,7 @@ export const SelectionScreen = () => {
         <div className="z-30 w-[768px] absolute top-0 left-[230px]">
           <img src={interfaceImg} className="w-[960px] h-[560px]" />
         </div>
+
         {Array.from(selectionScreenData.entries()).map(([key, value]) => {
           return (
             <CharacterIcon
@@ -60,6 +60,7 @@ export const SelectionScreen = () => {
             />
           );
         })}
+
         <img
           src={characterData?.portrait}
           className="z-0 

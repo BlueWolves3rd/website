@@ -1,8 +1,10 @@
 import bwLogo from "../assets/sobreNos/LOGO_BW-02-05.png";
 import banner from "../assets/sobreNos/alex-banner-bg-blue.png";
-import bgImage2021 from "../assets/sobreNos/20th.png";
-import bgImageHoje from "../assets/sobreNos/Alex_vs_Hugo.png";
-import bgImageProblemas from "../assets/sobreNos/twins.png";
+import bgImageHoje from "../assets/sobreNos/20th.png";
+import bgImage2021 from "../assets/sobreNos/ryu-vs-sagat-first-battle-drawn-by-motoki-yoshihara.jpg";
+import bgImageProblemas from "../assets/sobreNos/ryu-carrying.png";
+
+//<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60" />
 
 export const SobreNos = () => {
   return (
@@ -16,7 +18,7 @@ export const SobreNos = () => {
         <img src={bwLogo} className="w-[700px] absolute" />
       </div>
 
-      <div className="flex flex-col font-metropolis mb-12">
+      <div className="flex flex-col font-metropolis mb-12 mx-44 gap-16 mt-16">
         <div className="flex flex-row h-[600px]">
           <div
             className="text-6xl w-1/2 text-center flex items-center
@@ -31,36 +33,53 @@ export const SobreNos = () => {
             <p className="z-50 text-8xl text-black">2021</p>
           </div>
 
-          <div className="text-xl w-1/2 flex items-center justify-center text-white p-16">
-            Após vários anos em atividade, a comunidade de 3rd Strike estava em
-            inatividade. Por isso, o ShadowBurn, jogador de Gouki, pediu para o
-            Scarecrow (líder/dono do BW) criar um servidor do qual ele tinha
-            dado ideia, com inspiração em academias de artes marciais.
+          <div className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl">
+            A cena brasileira de 3rd Strike estava inativa. Frustrado com isso,
+            um dos únicos jogadores restantes, Shadow, entrou em contato com o
+            Scarecrow (líder/dono do BW). Num período de motivação temporária,
+            Scarecrow descreveu um projeto com perspectiva diferente. Baseado em
+            academias de artes marciais, o grupo produziria conteúdo e
+            promoveria competições toda semana. O que o Scarecrow não sabia,
+            porém, é que Shadow iria lhe importunar até a ideia sair do papel
+            com a criação do grupo Blue Wolves.
           </div>
         </div>
 
-        <div className="flex flex-row h-[600px] text-black relative">
-          <img
-            src={bgImageProblemas}
-            className="z-0 object-cover h-full w-full absolute"
-            style={{ objectPosition: "50% 20%" }}
-          />
-          <div className="text-xl w-1/2 flex items-center justify-center z-50 p-16">
-            A comunidade do jogo no Brasil sofria de vários problemas e, dentre
-            seus objetivos, o Blue Wolves visava resolvê-los: Unir os jogadores
-            em um só lugar, produzir conteúdo do jogo na língua
+        <div
+          className="flex flex-row h-[600px] text-black relative"
+          style={{
+            backgroundImage: `url(${bgImageProblemas})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div
+            className="text-xl bg-white bg-opacity-40 w-1/2 flex items-center
+                        justify-center z-50 py-8 px-24 leading-[2.25rem]"
+          >
+            No passado, o jogo havia sofrido com vários dilemas. Jogadores não
+            se davam muito bem sempre, então haviam vários grupos menores,
+            apelidados de "panelas". A produção de conteúdo e organização de
+            eventos era muito dependente de membros menos agradáveis da
+            comunidade. Pouco era feito para mudar isso. Dentre seus muitos
+            objetivos, a equipe do Blue Wolves estabeleceu que iria trabalhar
+            nesses problemas: Produzir conteúdo na língua portuguesa, organizar
+            eventos semanais e tentar unir os players sob um único teto.
           </div>
 
-          <p className="text-6xl w-1/2 text-center flex items-center justify-center z-50">
+          <p
+            className="text-6xl bg-white bg-opacity-40 w-1/2 text-center
+                        flex items-center justify-center z-50 text-black"
+          >
             PROBLEMAS
           </p>
         </div>
 
         <div className="flex flex-row h-[600px]">
-          <div className="text-xl w-1/2 flex items-center justify-center text-white p-16">
-            Cada vez maior, o Blue Woves revitalizou a comunidade de 3rd Strike.
-            Continuamos dedicados em apoiar o jogo que amamos e os jogadores que
-            contribuem pra cena.
+          <div className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl">
+            Cada vez maior, o Blue Wolves revitalizou a comunidade brasileira de
+            3rd Strike. Com diversos projetos cada vez mais ambiciosos,
+            continuamos apoiando o jogo que amamos!
           </div>
           <div
             className="text-6xl w-1/2 text-center flex items-center
@@ -71,7 +90,6 @@ export const SobreNos = () => {
               className="z-0 object-cover h-full w-full absolute"
               style={{ objectPosition: "50% 20%" }}
             />
-
             <p className="z-50 text-8xl text-black">HOJE</p>
           </div>
         </div>
