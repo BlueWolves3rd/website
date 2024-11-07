@@ -22,7 +22,7 @@ export const SobreNos = () => {
         <div className="flex flex-row h-[600px] mx-44">
           <div
             className="text-6xl w-1/2 text-center flex items-center
-                        justify-center relative border-[3px] border-gray-600"
+                        justify-center relative border-[3px] border-white"
           >
             <img
               src={bgImage2021}
@@ -59,7 +59,8 @@ export const SobreNos = () => {
           <div className="bg-[#02011e] bg-opacity-80 absolute top-0 left-0 w-full h-full" />
           <div
             className="text-xl w-1/2 flex items-center
-                        justify-center px-24 leading-[2.25rem] z-50"
+                        justify-center px-24 leading-[2.25rem] z-50
+                        [text-shadow:_0_4px_8px_rgb(0_0_0_/_100%)]"
           >
             No passado, o jogo havia sofrido com vários dilemas. Jogadores não
             se davam muito bem sempre, então haviam vários grupos menores,
@@ -73,21 +74,13 @@ export const SobreNos = () => {
 
           <p
             className="text-6xl  w-1/2 text-center
-                        flex items-center justify-center z-50"
+                        flex items-center justify-center z-50 [text-shadow:_0_8px_16px_rgb(0_0_0_/_100%)]"
           >
             PROBLEMAS
           </p>
         </div>
 
         <div className="flex flex-row h-[600px] mx-44">
-          <div
-            className="w-1/2 flex text-white px-24 leading-[2.25rem] text-xl
-                        justify-center items-center"
-          >
-            Cada vez maior, o Blue Wolves revitalizou a comunidade brasileira de
-            3rd Strike. Com diversos projetos cada vez mais ambiciosos,
-            continuamos apoiando o jogo que amamos!
-          </div>
           <div
             className="text-6xl w-1/2 text-center flex items-center
                         justify-center relative border-[3px] border-gray-600"
@@ -98,6 +91,14 @@ export const SobreNos = () => {
               style={{ objectPosition: "50% 20%" }}
             />
             <p className="z-50 text-8xl text-black">HOJE</p>
+          </div>
+          <div
+            className="w-1/2 flex text-white px-24 leading-[2.25rem] text-xl
+                        justify-center items-center"
+          >
+            Cada vez maior, o Blue Wolves revitalizou a comunidade brasileira de
+            3rd Strike. Com diversos projetos cada vez mais ambiciosos,
+            continuamos apoiando o jogo que amamos!
           </div>
         </div>
       </div>
