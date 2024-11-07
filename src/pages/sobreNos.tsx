@@ -34,7 +34,7 @@ export const SobreNos = () => {
           </div>
 
           <div
-            className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl
+            className="w-1/2 flex text-white px-24 leading-[2.25rem] text-xl
                         items-center justify-center"
           >
             A cena brasileira de 3rd Strike estava inativa. Frustrado com isso,
@@ -49,16 +49,17 @@ export const SobreNos = () => {
         </div>
 
         <div
-          className="flex flex-row h-[600px] text-white relative"
+          className="flex flex-row h-[600px] text-white relative px-44"
           style={{
             backgroundImage: `url(${bgImageProblemas})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
+          <div className="bg-[#02011e] bg-opacity-80 absolute top-0 left-0 w-full h-full" />
           <div
-            className="text-xl bg-[#02011e] bg-opacity-80 w-1/2 flex items-center
-                        justify-center z-50 py-8 px-24 leading-[2.25rem]"
+            className="text-xl w-1/2 flex items-center
+                        justify-center px-24 leading-[2.25rem] z-50"
           >
             No passado, o jogo havia sofrido com vários dilemas. Jogadores não
             se davam muito bem sempre, então haviam vários grupos menores,
@@ -71,7 +72,7 @@ export const SobreNos = () => {
           </div>
 
           <p
-            className="text-6xl bg-[#02011e] bg-opacity-80 w-1/2 text-center
+            className="text-6xl  w-1/2 text-center
                         flex items-center justify-center z-50"
           >
             PROBLEMAS
@@ -80,7 +81,7 @@ export const SobreNos = () => {
 
         <div className="flex flex-row h-[600px] mx-44">
           <div
-            className="w-1/2 flex text-white py-8 px-24 leading-[2.25rem] text-xl
+            className="w-1/2 flex text-white px-24 leading-[2.25rem] text-xl
                         justify-center items-center"
           >
             Cada vez maior, o Blue Wolves revitalizou a comunidade brasileira de
