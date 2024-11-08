@@ -28,7 +28,7 @@ export const SobreNos = () => {
               style={{ objectPosition: "50% 20%" }}
             />
 
-            <p className="z-50 text-8xl text-black">2021</p>
+            <p className="z-50 text-8xl text-white font-outline-4">2021</p>
           </div>
 
           <div
@@ -88,7 +88,7 @@ export const SobreNos = () => {
               className="z-0 object-cover h-full w-full absolute"
               style={{ objectPosition: "50% 20%" }}
             />
-            <p className="z-50 text-8xl text-black">HOJE</p>
+            <p className="z-50 text-8xl text-white font-outline-4">HOJE</p>
           </div>
           <div
             className="w-1/2 flex text-white px-24 leading-[2.25rem] text-xl
