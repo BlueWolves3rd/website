@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         pRegular: ["regular"],
         metropolis: ["Metropolis-Black"],
+        "metropolis-semibold": ["Metropolis-semibold"],
       },
       spacing: {
         alexLeft: "625px",

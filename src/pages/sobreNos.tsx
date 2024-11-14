@@ -16,7 +16,7 @@ export const SobreNos = () => {
         <img src={bwLogo} className="w-[700px] absolute" />
       </div>
 
-      <div className="flex flex-col font-metropolis mb-12  gap-16 mt-16">
+      <div className="flex flex-col font-metropolis mb-12 gap-16 mt-16">
         <div className="flex flex-row h-[600px] mx-44">
           <div
             className="text-6xl w-1/2 text-center flex items-center
