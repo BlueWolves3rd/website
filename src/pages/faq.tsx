@@ -1,7 +1,13 @@
-const Question = ({ children }: { children: string }) => {
+const Question = ({
+  children,
+  number,
+}: {
+  children: string;
+  number: number;
+}) => {
   return (
-    <div>
-      <h2 className="text-white text-2xl">{children}</h2>
+    <div className="z-0">
+      <h2 className="text-white text-2xl ">{`#0${number}: ${children}`}</h2>
     </div>
   );
 };
@@ -12,19 +18,26 @@ const Response = ({
   children: Array<JSX.Element> | JSX.Element;
 }) => {
   return (
-    <div className="bg-white p-5 text-xl flex flex-col gap-3">{children}</div>
+    <div className="bg-white p-5 text-xl flex flex-col gap-3 z-0">
+      {children}
+    </div>
   );
 };
+
 export const Faq = () => {
   return (
     <div className="w-screen min-h-screen font-metropolis-semibold">
-      <div className="mx-96 mt-12 flex flex-col gap-8">
-        <h2 className="text-white text-5xl font-metropolis">FAQ</h2>
+      <div className="mx-96 mt-12 mb-12 flex flex-col gap-8">
+        <h2 className="text-white text-5xl font-metropolis">
+          FAQ - Perguntas Frequentes
+        </h2>
         <h3 className="text-white text-2xl font-metropolis">
           Seguem algumas perguntas frequentes que recebemos. Elas foram pensadas
           e respondidas sem nenhuma ordem em específico.
         </h3>
-        <Question>Por que o nome do site/grupo é Blue Wolves?</Question>
+        <Question number={1}>
+          Por que o nome do site/grupo é Blue Wolves?
+        </Question>
         <Response>
           <p>
             A temática foi (roubada) inspirada num jogo de cartas chamado
@@ -37,7 +50,7 @@ export const Faq = () => {
           <p>Por óbvio, o nosso Blue Wolves é bem mais adequado.</p>
         </Response>
 
-        <Question>
+        <Question number={2}>
           Por que jogar 3rd Strike? Esse jogo sequer é balanceado?
         </Question>
 
@@ -72,11 +85,10 @@ export const Faq = () => {
           <p>Por isso, adoramos o jogo e achamos "balanceado" nesse sentido.</p>
         </Response>
 
-        <Question>Pra que serve cada parte do site?</Question>
+        <Question number={3}>Pra que serve cada parte do site?</Question>
 
         <Response>
           <p>
-            {" "}
             Não consegui me localizar direito. Na tela inicial, a seleção de
             personagens levará para os guias do Riddler. Feitos pelo melhor
             jogador da América Latina, eles serão essenciais para o aprendizado
@@ -99,7 +111,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question>
+        <Question number={4}>
           Jogos mais recentes não dão mais dinheiro? Qual o lucro ao jogar 3S?
         </Question>
 
@@ -114,20 +126,19 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question>
+        <Question number={5}>
           De onde vocês tiram essas informações? Quais são as fontes usadas?
         </Question>
 
         <Response>
           <p>
-            {" "}
             Tiramos principalmente do Riddler e do Scarecrow que, por sua vez,
             se baseiam em décadas de experiência no jogo, no conteúdo disponível
             dos japoneses, nos torneios japoneses e assim por diante.
           </p>
         </Response>
 
-        <Question>Como instalar e jogar 3rd Strike?</Question>
+        <Question number={6}>Como instalar e jogar 3rd Strike?</Question>
 
         <Response>
           <p>
@@ -137,13 +148,15 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question>Quero participar do grupo! Como proceder?</Question>
+        <Question number={7}>
+          Quero participar do grupo! Como proceder?
+        </Question>
 
         <Response>
           <p>Entre em contato; Use a página de 'Contato'.</p>
         </Response>
 
-        <Question>
+        <Question number={8}>
           É fácil de aprender? Quanto tempo vou demorar pra ser bom?
         </Question>
 
@@ -169,7 +182,7 @@ export const Faq = () => {
           <p>"O caminho da virtude é o mesmo da felicidade" – Aristóteles</p>
         </Response>
 
-        <Question>Eu discordo de algo aqui! O que fazer?</Question>
+        <Question number={9}>Eu discordo de algo aqui! O que fazer?</Question>
 
         <Response>
           <p>
@@ -180,7 +193,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question>
+        <Question number={10}>
           Esses papos de "match-ups" e "tier lists" não importam. Não é tudo
           baseado em habilidade?
         </Question>
@@ -202,7 +215,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question>
+        <Question number={11}>
           As artes presentes no site foram produzidas por vocês?
         </Question>
 
@@ -214,7 +227,9 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question>Posso usar o conteúdo aqui de referência?</Question>
+        <Question number={12}>
+          Posso usar o conteúdo aqui de referência?
+        </Question>
 
         <Response>
           <p>Por favor! Só lembre-se de tentar dar crédito.</p>
