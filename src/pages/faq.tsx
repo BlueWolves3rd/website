@@ -180,7 +180,7 @@ export const Faq = () => {
 
         <Response>
           <p>
-            Sinta-selivre! Não há método errado de jogar um jogo contanto que
+            Sinta-se livre! Não há método errado de jogar um jogo contanto que
             você se divirta, mas 3rd Strike tende a ser mais divertido quando
             vencemos e
           </p>
