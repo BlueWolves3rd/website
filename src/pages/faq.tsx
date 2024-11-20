@@ -3,11 +3,11 @@ const Question = ({
   number,
 }: {
   children: string;
-  number: number;
+  number: string;
 }) => {
   return (
     <div className="z-0">
-      <h2 className="text-white text-2xl ">{`#0${number}: ${children}`}</h2>
+      <h2 className="text-white text-2xl ">{`#${number}: ${children}`}</h2>
     </div>
   );
 };
@@ -35,7 +35,7 @@ export const Faq = () => {
           Seguem algumas perguntas frequentes que recebemos. Elas foram pensadas
           e respondidas sem nenhuma ordem em específico.
         </h3>
-        <Question number={1}>
+        <Question number={"01"}>
           Por que o nome do site/grupo é Blue Wolves?
         </Question>
         <Response>
@@ -50,7 +50,7 @@ export const Faq = () => {
           <p>Por óbvio, o nosso Blue Wolves é bem mais adequado.</p>
         </Response>
 
-        <Question number={2}>
+        <Question number={"02"}>
           Por que jogar 3rd Strike? Esse jogo sequer é balanceado?
         </Question>
 
@@ -79,13 +79,13 @@ export const Faq = () => {
             que fazem essa força de personagem ser bem menos relevante que a
             força do jogador. O jogo possui uma das cenas competitivas mais
             notórias dos jogos de luta e apesar de todo problema no lançamento,
-            sobreviveu o teste do tempo.{" "}
+            sobreviveu o teste do tempo.
           </p>
 
           <p>Por isso, adoramos o jogo e achamos "balanceado" nesse sentido.</p>
         </Response>
 
-        <Question number={3}>
+        <Question number={"03"}>
           Pra que serve cada parte do site? Não consegui me localizar direito.
         </Question>
 
@@ -112,7 +112,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question number={4}>
+        <Question number={"04"}>
           Jogos mais recentes não dão mais dinheiro? Qual o lucro ao jogar 3S?
         </Question>
 
@@ -127,7 +127,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question number={5}>
+        <Question number={"05"}>
           De onde vocês tiram essas informações? Quais são as fontes usadas?
         </Question>
 
@@ -139,7 +139,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question number={6}>Como instalar e jogar 3rd Strike?</Question>
+        <Question number={"06"}>Como instalar e jogar 3rd Strike?</Question>
 
         <Response>
           <p>
@@ -149,7 +149,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question number={7}>
+        <Question number={"07"}>
           Quero participar do grupo! Como proceder?
         </Question>
 
@@ -157,7 +157,7 @@ export const Faq = () => {
           <p>Entre em contato; Use a página de 'Contato'.</p>
         </Response>
 
-        <Question number={8}>
+        <Question number={"08"}>
           É fácil de aprender? Quanto tempo vou demorar pra ser bom?
         </Question>
 
@@ -172,18 +172,24 @@ export const Faq = () => {
             Cada jogador é diferente e aprende em velocidade diferente, mas os
             mais talentosos chegaram no alto nível em 1~2 anos de jogatina.
           </p>
+        </Response>
 
+        <Question number={"09"}>
+          Não quero aprender o jogo! Só quero jogar casualmente!
+        </Question>
+
+        <Response>
           <p>
-            Não quero aprender o jogo! Só quero jogar casualmente! Sinta-se
-            livre! Não há método errado de jogar um jogo contanto que você se
-            divirta, mas 3rd Strike tende a ser mais divertido quando vencemos e
-            buscamos jogar bem, explorar as opções do jogo.
+            Sinta-selivre! Não há método errado de jogar um jogo contanto que
+            você se divirta, mas 3rd Strike tende a ser mais divertido quando
+            vencemos e
           </p>
 
           <p>"O caminho da virtude é o mesmo da felicidade" – Aristóteles</p>
         </Response>
-
-        <Question number={9}>Eu discordo de algo aqui! O que fazer?</Question>
+        <Question number={"10"}>
+          Eu discordo de algo aqui! O que fazer?
+        </Question>
 
         <Response>
           <p>
@@ -194,7 +200,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question number={10}>
+        <Question number={"11"}>
           Esses papos de "match-ups" e "tier lists" não importam. Não é tudo
           baseado em habilidade?
         </Question>
@@ -216,7 +222,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question number={11}>
+        <Question number={"12"}>
           As artes presentes no site foram produzidas por vocês?
         </Question>
 
@@ -228,7 +234,7 @@ export const Faq = () => {
           </p>
         </Response>
 
-        <Question number={12}>
+        <Question number={"13"}>
           Posso usar o conteúdo aqui de referência?
         </Question>
 
