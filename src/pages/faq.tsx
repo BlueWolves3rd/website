@@ -188,7 +188,7 @@ export const Faq = () => {
           <p>"O caminho da virtude é o mesmo da felicidade" – Aristóteles</p>
         </Response>
         <Question number={"10"}>
-          Eu discordo de algo aqui! O que fazer?
+          Eu discordo de algo daqui! O que fazer?
         </Question>
 
         <Response>
