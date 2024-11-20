@@ -85,14 +85,15 @@ export const Faq = () => {
           <p>Por isso, adoramos o jogo e achamos "balanceado" nesse sentido.</p>
         </Response>
 
-        <Question number={3}>Pra que serve cada parte do site?</Question>
+        <Question number={3}>
+          Pra que serve cada parte do site? Não consegui me localizar direito.
+        </Question>
 
         <Response>
           <p>
-            Não consegui me localizar direito. Na tela inicial, a seleção de
-            personagens levará para os guias do Riddler. Feitos pelo melhor
-            jogador da América Latina, eles serão essenciais para o aprendizado
-            no jogo.
+            Na tela inicial, a seleção de personagens levará para os guias do
+            Riddler. Feitos pelo melhor jogador da América Latina, eles serão
+            essenciais para o aprendizado no jogo.
           </p>
 
           <p>
