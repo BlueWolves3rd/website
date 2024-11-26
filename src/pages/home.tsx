@@ -14,7 +14,7 @@ export const Home = () => {
       <div className="w-full bg-black flex flex-col items-center pt-8">
         <SelectionScreen />
         <div className="flex flex-row gap-12 mt-8 w-full justify-center">
-          <HomeButton img={kenSf2Idle} zoomImg={kenSf2Win}>
+          <HomeButton img={kenSf2Idle} zoomImg={kenSf2Win} link="scare">
             Conteúdo do Scare
           </HomeButton>
           <HomeButton img={muE} zoomImg={muS}>

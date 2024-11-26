@@ -5,6 +5,7 @@ import { Contato } from "../pages/contato";
 import { Home } from "../pages/home";
 import { SobreNos } from "../pages/sobreNos.tsx";
 import { Faq } from "../pages/faq.tsx";
+import { Scare } from "../pages/scare.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/faq",
         element: <Faq />,
+      },
+      {
+        path: "/scare",
+        element: <Scare />,
       },
     ],
   },
