@@ -33,11 +33,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/scare",
+
+        element: <Scare />,
         children: [
-          {
-            path: "/scare",
-            element: <Scare />,
-          },
           {
             path: "/scare/outrange",
             element: (
