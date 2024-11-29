@@ -6,8 +6,6 @@ import { Home } from "../pages/home";
 import { SobreNos } from "../pages/sobreNos.tsx";
 import { Faq } from "../pages/faq.tsx";
 import { Scare } from "../pages/scare.tsx";
-import Outrange from "../pages/scare/outrange.mdx";
-import { MarkdownStyle } from "../components/markdownStyle.tsx";
 
 const router = createBrowserRouter([
   {
@@ -40,11 +38,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/scare/outrange",
-            element: (
-              <MarkdownStyle>
-                <Outrange />
-              </MarkdownStyle>
-            ),
+            element: <Scare />,
           },
         ],
       },
