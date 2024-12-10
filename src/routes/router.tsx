@@ -31,6 +31,10 @@ const router = createBrowserRouter([
         element: <Faq />,
       },
       {
+        path: "/outrange",
+        element: <Outrange />,
+      },
+      {
         path: "/scare",
 
         children: [
