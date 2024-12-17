@@ -58,23 +58,25 @@ const Text = ({ children, mt }: { children: ReactNode; mt?: string }) => {
 
 const NavSidebar = () => {
   return (
-    <div className="flex flex-col  top-40 left-0 sticky text-white h-full ml-8">
+    <div className="flex flex-col  top-40 left-0 sticky text-white h-full ml-8 ">
       <div className="p-2">Conteúdo</div>
-      <div className="ml-4 flex flex-col">
-        <a
-          href="#outrange"
-          className="hover:bg-zinc-800 p-2 hover:text-blue-400"
-        >
-          Outrange
-        </a>
-      </div>
-      <div className="ml-4 flex flex-col">
-        <a
-          href="#footageDeRef"
-          className="hover:bg-zinc-800 p-2 hover:text-blue-400"
-        >
-          Footage de Referência
-        </a>
+      <div className="border-l-white border-l-2">
+        <div className="ml-4 flex flex-col">
+          <a
+            href="#outrange"
+            className="hover:bg-zinc-800 p-2 hover:text-blue-400"
+          >
+            Outrange
+          </a>
+        </div>
+        <div className="ml-4 flex flex-col">
+          <a
+            href="#footageDeRef"
+            className="hover:bg-zinc-800 p-2 hover:text-blue-400"
+          >
+            Footage de Referência
+          </a>
+        </div>
       </div>
     </div>
   );
