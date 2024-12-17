@@ -10,9 +10,9 @@ import { HomeButton } from "../components/homeButton";
 
 export const Home = () => {
   return (
-    <div className="w-full justify-center flex flex-grow bg-black">
+    <div className="w-full justify-center flex flex-grow bg-[#121212]">
       <div className="max-w-screen-lg">
-        <div className="w-full bg-black flex flex-col items-center pt-8">
+        <div className="w-full  flex flex-col items-center pt-8">
           <SelectionScreen />
           <div className="flex flex-row gap-12 mt-8 w-full justify-center">
             <HomeButton img={kenSf2Idle} zoomImg={kenSf2Win} link="scare">
