@@ -58,14 +58,10 @@ const Text = ({ children, mt }: { children: ReactNode; mt?: string }) => {
 
 const NavSidebar = () => {
   return (
-    <div
-      className="flex flex-col text-white h-full
-                col-span-3 text-xl bg-[#181818] text-justify items-center 
-            pt-8 relative border-[#969696] border-r-4"
-    >
-      <div className="flex flex-col items-center text-center fixed w-[300px]">
-        <div className="p-2 w-full text-2xl">Conteúdo</div>
-        <div className="flex flex-col w-full">
+    <div className="flex flex-col top-40 left-0 sticky text-white h-full ml-8">
+      <div className="p-2">Conteúdo</div>
+      <div className="border-l-white border-l-2">
+        <div className="ml-4 flex flex-col">
           <a
             href="#outrange"
             className="hover:bg-zinc-800 p-2 hover:text-blue-400"
@@ -73,7 +69,7 @@ const NavSidebar = () => {
             Outrange
           </a>
         </div>
-        <div className="flex flex-col w-full">
+        <div className="ml-4 flex flex-col">
           <a
             href="#footageDeRef"
             className="hover:bg-zinc-800 p-2 hover:text-blue-400"
@@ -88,9 +84,8 @@ const NavSidebar = () => {
 
 export const Outrange = () => {
   return (
-    <div className="w-full grid  grid-cols-12 bg-[#121212] font-metropolis-semibold gap-12">
-      <NavSidebar />
-      <div className="flex justify-center text-white text-lg w-full col-span-6 pb-8">
+    <div className="w-full flex flex-grow bg-[#121212] font-metropolis-semibold pb-8">
+      <div className=" flex justify-center text-white text-lg w-full">
         <div className="max-w-screen-lg">
           <Header level={1} id="outrange">
             OUTRANGE
@@ -185,7 +180,6 @@ export const Outrange = () => {
           </Text>
         </div>
       </div>
-      <div className="col-span-3 w-full bg-[#181818]  border-[#969696] border-l-4"></div>
     </div>
   );
 };
