@@ -63,21 +63,23 @@ const NavSidebar = () => {
                 col-span-3 text-xl bg-[#181818] text-justify items-center 
             pt-8 relative border-[#969696] border-r-4"
     >
-      <div className="flex flex-col items-center text-center fixed w-[300px]">
-        <div className="p-2 w-full text-2xl">Conteúdo</div>
-        <div className="flex flex-col w-full">
+      <div className="flex flex-col items-center fixed w-[300px]">
+        <div className="p-2 w-full text-2xl">CONTEÚDO</div>
+        <div className="flex flex-col w-full ml-[-3rem] relative">
           <a
             href="#outrange"
-            className="hover:bg-zinc-800 p-2 hover:text-blue-400"
+            className="hover:bg-zinc-800 p-2 hover:text-blue-400 flex flex-row items-center"
           >
+            <div className="mr-2 w-4 h-1 bg-white"></div>
             Outrange
           </a>
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full ml-[-3rem] relative">
           <a
-            href="#footageDeRef"
-            className="hover:bg-zinc-800 p-2 hover:text-blue-400"
+            href="#outrange"
+            className="hover:bg-zinc-800 p-2 hover:text-blue-400 flex flex-row items-center"
           >
+            <div className="mr-2 w-4 h-1 bg-white"></div>
             Footage de Referência
           </a>
         </div>
@@ -90,7 +92,7 @@ export const Outrange = () => {
   return (
     <div className="w-full grid  grid-cols-12 bg-[#121212] font-metropolis-semibold gap-12">
       <NavSidebar />
-      <div className="flex justify-center text-white text-lg w-full col-span-6 pb-8">
+      <div className="flex justify-center text-white text-lg w-full col-span-9 pb-8">
         <div className="max-w-screen-lg">
           <Header level={1} id="outrange">
             OUTRANGE
@@ -127,8 +129,8 @@ export const Outrange = () => {
             punidos. Também relevante é que se o oponente pular, ele terá todo o
             seu recovery para tentar punir este golpe. Use a estratégia de dar
             outrange em botões quando notar que as opções que o oponente está
-            usando são golpes de menor distância que o seu, como usar o st.HK do
-            Ken acima de um cr.MK, em uma mirror match.
+            usando são golpes de menor distância que os seus, como usar o st.HK
+            do Ken acima de um cr.MK, em uma mirror match.
           </Text>
           <Text>
             Apesar de o Ken ser usado como referência base, até por ser o
@@ -142,7 +144,7 @@ export const Outrange = () => {
           </Text>
 
           <Header level={2} id="footageDeRef">
-            FOOTAGE DE REFRÊNCIA
+            FOOTAGE DE REFERÊNCIA
           </Header>
 
           <ContentLinkImg
@@ -169,23 +171,26 @@ export const Outrange = () => {
           </Text>
 
           <Text>
-            7:15 até 7:45 Fique atento enquanto assiste algum set para notar o
-            quão frequente é a adaptação de um jogador bom à opção do oponente!
+            Fique atento enquanto assiste algum set para notar o quão frequente
+            é a adaptação de um jogador bom à opção do oponente!
           </Text>
-          <Text mt="12rem">
-            ...Ou assista a um set de um{" "}
-            <a
-              className="text-blue-500 border-b-2 border-b-solid border-b-blue-500
-                    hover:text-blue-800 hover:border-blue-800 my-2"
-              href="https://www.youtube.com/watch?v=VrDrGvHk68M&ab_channel=3rdSTRIKE"
-              target="_blank"
-            >
-              Oro
-            </a>
-          </Text>
+          <div className="text-[#121212] hover:text-white group">
+            <Text mt="12rem">
+              ...Ou assista um set de um{" "}
+              <a
+                className="border-b-2 border-b-solid  border-[#121212]
+                    my-2 
+                    group-hover:text-blue-500 group-hover:border-b-blue-500"
+                href="https://www.youtube.com/watch?v=VrDrGvHk68M&ab_channel=3rdSTRIKE"
+                target="_blank"
+              >
+                Oro
+              </a>
+              . 7:15 até 7:45
+            </Text>
+          </div>
         </div>
       </div>
-      <div className="col-span-3 w-full bg-[#181818]  border-[#969696] border-l-4"></div>
     </div>
   );
 };
