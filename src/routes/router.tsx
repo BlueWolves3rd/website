@@ -7,6 +7,8 @@ import { SobreNos } from "../pages/sobreNos.tsx";
 import { Faq } from "../pages/faq.tsx";
 import { Scare } from "../pages/scare.tsx";
 import { Outrange } from "../pages/scare/outrange.tsx";
+import { Ken } from "../pages/riddler/ken.tsx";
+import { LidandoComMakoto } from "../pages/scare/lidandoComMakoto.tsx";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +37,15 @@ const router = createBrowserRouter([
         element: <Outrange />,
       },
       {
+        path: "/lidandoComMakoto",
+        element: <LidandoComMakoto />,
+      },
+      {
+        path: "/ken",
+        element: <Ken />,
+      },
+      {
         path: "/scare",
-
         children: [
           {
             path: "/scare",
