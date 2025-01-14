@@ -6,7 +6,7 @@ import bgImageProblemas from "../assets/sobreNos/ryu-carrying.png";
 
 export const SobreNos = () => {
   return (
-    <div className="relative w-screen bg-[#121212]">
+    <div className="relative min-w-screen bg-[#121212]">
       <div className="flex justify-center h-[600px] items-center">
         <img
           src={banner}

@@ -8,6 +8,9 @@ export default {
         metropolis: ["Metropolis-Black"],
         "metropolis-semibold": ["Metropolis-semibold"],
       },
+      textColor: {
+        textBlue: "#6b6efa",
+      },
       spacing: {
         alexLeft: "625px",
         alexTop: "355px",
