@@ -23,11 +23,11 @@ import { ReactNode } from "react";
 const Move = ({
   children,
   src,
-  height,
+  width,
 }: {
   children: string;
   src?: string;
-  height?: string;
+  width?: string;
 }) => {
   return (
     <div>
@@ -40,7 +40,7 @@ const Move = ({
       </ul>
       {src ? (
         <div className="flex ml-4 mt-6 mb-8">
-          <img src={src} style={{ height: height ? height : "8rem" }} />
+          <img src={src} style={{ width: width ? width : "8rem" }} />
         </div>
       ) : (
         <></>
@@ -77,6 +77,7 @@ const TextDecoration = ({
     </>
   );
 };
+
 export const Ken = () => {
   const navSidebarList = [
     { href: "#Ken", label: "Ken" },
@@ -119,7 +120,7 @@ export const Ken = () => {
         Golpes Normais
       </Header>
       <Text>Os principais golpes normais do Ken são:</Text>
-      <Move src={crLK}>cr.LK</Move>
+      <Move src={crLK} width="274px">cr.LK</Move>
       <Text>
         Mais importante do que o cr.LP por ser um{" "}
         <TextDecoration bold>golpe baixo</TextDecoration>
@@ -155,7 +156,7 @@ export const Ken = () => {
         <TextDecoration bold>bait/dash check</TextDecoration>
         (interromper dashes e baitar whiff punishes em alto nível).
       </Text>
-      <Move src={crMP}>cr.MP</Move>
+      <Move src={crMP} width="230px">cr.MP</Move>
       <Text>
         Este é um dos golpes mais fortes do Ken no chão, porque
         <TextDecoration underline>
@@ -209,7 +210,7 @@ export const Ken = () => {
         função de crouch tech, porém, assim como a de confirm, será elaborada
         mais tarde.
       </Text>
-      <Move src={crMK}>cr.MK</Move>
+      <Move src={crMK} width="352px">cr.MK</Move>
       <Text>
         O outro golpe mais importante no chão. Trata-se de um
         <TextDecoration underline>
@@ -253,7 +254,7 @@ export const Ken = () => {
         do personagem. Deve ser usado com um bom posicionamento que permita
         essas punições sem que o Ken seja punido.
       </Text>
-      <Move src={crHK}> cr.HK </Move>
+      <Move src={crHK} width="360px"> cr.HK </Move>
       <Text>
         A sweep do Ken é um golpe decente, mas
         <TextDecoration underline>
@@ -274,7 +275,7 @@ export const Ken = () => {
         Além de punível se o adversário defender de perto, o cr.HK é lento para
         um golpe defensivo.
       </Text>
-      <Move src={clMP}>cl.MP</Move>
+      <Move src={clMP} width="190px">cl.MP</Move>
       <Text>
         Provavelmente{" "}
         <TextDecoration underline>
@@ -302,7 +303,7 @@ export const Ken = () => {
         de perto quanto
         <TextDecoration blue>confirm</TextDecoration>.
       </Text>
-      <Move src={farMP}>far MP</Move>
+      <Move src={farMP} width="254px">far MP</Move>
       <Text>
         O far MP do Ken é, basicamente,{" "}
         <TextDecoration underline>a versão em pé do cr.MP</TextDecoration>:
@@ -340,7 +341,7 @@ export const Ken = () => {
         isto é, pode não encostar se ficarem abaixados. Isto deixa o Ken
         vulnerável, então recomenda-se cautela.
       </Text>
-      <Move src={stHK}> st.HK</Move>
+      <Move src={stHK} width="374px"> st.HK</Move>
       <Text>
         É o <TextDecoration underline>golpe alto de longe</TextDecoration> do
         Ken. Utilizado como <TextDecoration bold>poke</TextDecoration> (golpe
@@ -376,7 +377,7 @@ export const Ken = () => {
         </TextDecoration>
         , como após um cr.LK de max range (na ponta).
       </Text>
-      <Move src={jHK}>j.HK</Move>
+      <Move src={jHK} width="246px">j.HK</Move>
       <Text>
         O <TextDecoration bold>jump-in</TextDecoration> do Ken. Autoexplicativo.
         Quase sempre que o Ken pular para atacar{" "}
@@ -432,7 +433,7 @@ export const Ken = () => {
         </TextDecoration>
         .
       </Text>
-      <Move src={jMK}>j.MK</Move>
+      <Move src={jMK} width="264px">j.MK</Move>
       <Text>
         O <TextDecoration bold>cross-up</TextDecoration> do Ken é provavelmente
         o melhor do jogo quando analisado o kit inteiro à disposição do Ken ao
@@ -491,7 +492,7 @@ export const Ken = () => {
         Specials
       </Header>
       <Text> Os principais specials do Ken são:</Text>
-      <Move src={dp} height={"18rem"}>
+      <Move src={dp} width={"475px"}>
         Shoryuken
       </Move>
       <Text>
@@ -550,7 +551,7 @@ export const Ken = () => {
         <TextDecoration bold>segurança</TextDecoration>. Há menos risco de o
         Shoryu fraco errar pela distância.
       </Text>
-      <Move src={tatsu}>EX Tatsumaki aéreo</Move>
+      <Move src={tatsu} width="320px">EX Tatsumaki aéreo</Move>
       <Text>
         É a única versão realmente importante do Tatsumaki do Ken neste jogo,,
         por dois motivos: <TextDecoration bold>fugir do corner</TextDecoration>{" "}
@@ -612,7 +613,7 @@ export const Ken = () => {
         </TextDecoration>
         , exceto contra Dudley.
       </Text>
-      <Move src={hadou}>EX Hadouken</Move>
+      <Move src={hadou} width="272px">EX Hadouken</Move>
       <Text>
         A versão EX do Hadouken funciona principalmente como{" "}
         <TextDecoration bold>safe poke</TextDecoration>, feito puro ou{" "}
@@ -1425,7 +1426,7 @@ export const Ken = () => {
       <Header level={1} id="MU">
         Matchups
       </Header>
-      <Move src={chunStance}>Chun-Li</Move>
+      <Move src={chunStance} width="165px">Chun-Li</Move>
       <Text>
         Provavelmente a matchup mais difícil do Ken e de muitos outros
         personagens.{" "}
@@ -1478,7 +1479,7 @@ export const Ken = () => {
         para contornar e punir o kara-throw e os golpes fortes dela (far HK/6HK
         e 4HP) com cr.MK xx SA3.
       </Text>
-      <Move src={dudleyStance}>Dudley</Move>
+      <Move src={dudleyStance} width="212px">Dudley</Move>
       <Text>
         Outra matchup difícil para o Ken, apesar de mais ou menos equilibrada.
         <TextDecoration underline>
@@ -1535,7 +1536,7 @@ export const Ken = () => {
         fazer isso se realmente for necessário, senão o Ken arrisca ficar no
         corner e ter que lutar para sair de lá.
       </Text>
-      <Move src={makotoStance}>Makoto</Move>
+      <Move src={makotoStance} width="238px">Makoto</Move>
       <Text>
         Uma personagem que costuma infernizar os jogadores iniciantes. Porém, o
         Ken tem vantagem nesta matchup. Isto porque o{" "}
@@ -1583,7 +1584,7 @@ export const Ken = () => {
       <Header level={1} id="topPlayers">
         Top Players
       </Header>
-      <Move src={deshiken}>Deshiken (弟子犬)</Move>
+      <Move src={deshiken} width="156px">Deshiken (弟子犬)</Move>
       <Text>
         Incontestavelmente{" "}
         <TextDecoration underline>
@@ -1686,7 +1687,7 @@ export const Ken = () => {
         </TextDecoration>
         .
       </Text>
-      <Move src={matsuken}>Matsuken (マツケン)</Move>
+      <Move src={matsuken} width="156px">Matsuken (マツケン)</Move>
       <Text>
         Muito provavelmente{" "}
         <TextDecoration underline>
@@ -1763,7 +1764,7 @@ export const Ken = () => {
         segundo colocado da segunda lista
       </TextDecoration>
       , atrás somente do Tominaga.
-      <Move src={deshiken}>Boss (ボス)</Move>
+      <Move src={deshiken} width="156px">Boss (ボス)</Move>
       <Text>
         Um dos melhores jogadores em geral, extremamente forte com vários
         personagens, Boss tem no Ken talvez o seu personagem mais forte
