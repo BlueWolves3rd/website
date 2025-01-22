@@ -55,12 +55,14 @@ const TextDecoration = ({
   red,
   underline,
   bold,
+    href,
 }: {
   children: ReactNode | string;
   blue?: boolean;
   underline?: boolean;
   bold?: boolean;
   red?: boolean;
+        href?: string;
 }) => {
   return (
     <>
@@ -71,9 +73,8 @@ const TextDecoration = ({
           textDecorationLine: underline ? "underline" : "none",
           fontFamily: bold ? "Metropolis-Black" : "Metropolis-semibold",
         }}
-      >
-        {children}
-      </span>{" "}
+      >{href? <a href={href} target="_blank">{children}</a>:<> {children}</>}
+      </span>
     </>
   );
 };
@@ -1094,7 +1095,7 @@ export const Ken = () => {
       <Move>DED (cr.MK xx SA3)</Move>
       <Text>
         Alguns personagens podem tirar proveito de um exploit chamado “DED” (
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="http://fgamers.saikyou.biz/?DED#.ZE3bVXbMKUk">
           o nome parece vir de um jogador de Ken que popularizou a técnica
         </TextDecoration>
         ), que serve como uma espécie de{" "}
@@ -1115,7 +1116,7 @@ export const Ken = () => {
         (Shoryu) se o cr.MK for defendido, já que o Super é com chute.
       </Text>
       <Text>
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=hn0V5GElcY4">
           Este vídeo antigo, feito pelo jogador C-Royd
         </TextDecoration>
         , explica a técnica e serve como uma boa referência visual para a
@@ -1132,7 +1133,8 @@ export const Ken = () => {
           ele precisa estar com 70 a 74 pontos para ter o DED de cr.MK pronto
         </TextDecoration>{" "}
         (recomenda-se utilizar o
-        <TextDecoration underline blue>
+        <TextDecoration underline blue
+                    href="https://docs.google.com/document/d/1BAKXxwGBxGJM56CTUZP50sBsBDTSjPwvcOdfubMjyrQ/edit?usp=sharing">
           training mode com lua script no Fightcade
         </TextDecoration>{" "}
         para praticar e familiarizar-se com a quantidade correta). A partir
@@ -1212,7 +1214,7 @@ export const Ken = () => {
       <Text>
         Existem alguns <TextDecoration bold>tutoriais</TextDecoration> sobre o
         Kara-Shoryuken no YouTube.{" "}
-        <TextDecoration blue underline>
+        <TextDecoration blue underline href="https://www.youtube.com/watch?v=FaKADkbNDeQ&ab_channel=Sf3lp">
           Este
         </TextDecoration>
         , do jogador <TextDecoration bold>AC-Slayer</TextDecoration> (postado
@@ -1220,13 +1222,13 @@ export const Ken = () => {
         é provavelmente o mais antigo e um dos mais simples e conhecidos.
         Bastante curto, explica brevemente os requisitos e demonstra
         suficientemente bem a execução.{" "}
-        <TextDecoration blue underline>
+        <TextDecoration blue underline href="https://www.youtube.com/watch?v=FaKADkbNDeQ&ab_channel=Sf3lp">
           Aqui
         </TextDecoration>
         , o famoso jogador americano{" "}
         <TextDecoration bold>Nica K.O</TextDecoration> (um dos mais fortes)
         pratica o Kara-Shoryu e explica por um período mais extenso. Há também
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=aVJ52yyiA-s&ab_channel=bola385">
           este mais recente
         </TextDecoration>
         , feito pelo jogador Bola385 especialmente para os brasileiros que não
@@ -1239,7 +1241,7 @@ export const Ken = () => {
         listas foram baseadas e adaptadas a partir da listagem do jogador
         americano <TextDecoration bold>Mopreme</TextDecoration>, que pode ser
         encontrada{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://mopreme.livejournal.com/458.html">
           aqui
         </TextDecoration>
         .
@@ -1310,7 +1312,7 @@ export const Ken = () => {
           existe diferença no setplay do Ken entre o Player 1 e o Player 2
         </TextDecoration>
         .{" "}
-        <TextDecoration blue underline>
+        <TextDecoration blue underline href="https://www.youtube.com/watch?v=lQ5mLlWdqbA">
           Este vídeo
         </TextDecoration>{" "}
         do <TextDecoration bold>Nica K.O</TextDecoration> explica bem a
@@ -1592,7 +1594,7 @@ export const Ken = () => {
         </TextDecoration>{" "}
         e o jogador mais forte que continua ativo. Embora tenha demorado mais do
         que o famoso Daigo Umehara a ficar conhecido no ocidente, Deshiken{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=yRQkbQt29GY&ab_channel=arindam43">
           joga desde o começo do cenário competitivo e já se destacava nos
           grandes eventos
         </TextDecoration>
@@ -1613,7 +1615,7 @@ export const Ken = () => {
         O canal <TextDecoration bold>Feetwork 101</TextDecoration> fez uma série
         de vídeos, chamados de “Film Rooms”, para explicar melhor a mentalidade
         de alguns top players;{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=ThclBNwwNao&ab_channel=Feetwork101">
           neste aqui
         </TextDecoration>
         , analisa as jogadas do Deshiken.
@@ -1622,29 +1624,29 @@ export const Ken = () => {
         Possui os melhores resultados em sets e torneios nos últimos anos,
         apesar de viver longe dos maiores arcades. Venceu, entre outros, os
         jogadores de elite{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=ghM90jpDGU0&ab_channel=DeemoKun">
           K.O (YA)
         </TextDecoration>
         ,{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=cQRMydRiY8Y&ab_channel=DeemoKun">
           Kokujin (DU)
         </TextDecoration>{" "}
         e{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=Q4mddINLEsg&t=159s&ab_channel=DeemoKun">
           Mimora (MA)
         </TextDecoration>{" "}
         em FT10, bem como os lendários{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=bQ-gZY2Fuk8&ab_channel=acslayer">
           Kuroda (KE)
         </TextDecoration>
         , em FT5, e{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=Lk3DDCHJHv0&ab_channel=acslayer">
           Boss (KE)
         </TextDecoration>
         , em FT20.
       </Text>
       <Text>
-        Em um evento Random 3v3 postado em 3 partes (os jogadores aleatoriamente
+        Em um evento <TextDecoration underline blue href="https://www.youtube.com/watch?v=iwYojEJrRjw&list=PL3DXHLetuqSRdfwYR96BkNDUACSmqg4zX&index=2&ab_channel=DeemoKun">Random 3v3</TextDecoration> postado em 3 partes (os jogadores aleatoriamente
         formavam trios e se enfrentavam), agraciado com a participação dos
         gigantes{" "}
         <TextDecoration underline>
@@ -1659,30 +1661,30 @@ export const Ken = () => {
         tornar-se jogador competitivo de Street Fighter 5, mas eventualmente
         retornou ao 3rd Strike (durante a pandemia do COVID-19) e desde então
         permanece{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/user/inoueoro/videos">
           ativo nas streams do canal Inoculture
         </TextDecoration>
         , onde enfrenta (e geralmente vence) jogadores muito fortes, como{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://youtu.be/ppFz0r3pxRE?t=6765">
           Ushi!? (YU)
         </TextDecoration>
-        , <TextDecoration underline>RB (UR)</TextDecoration>,
+        , <TextDecoration underline blue href="https://youtu.be/s6BBaH6-bIo?t=5128">RB (UR)</TextDecoration>,
         <TextDecoration underline>Ikego (EL)</TextDecoration>,{" "}
         <TextDecoration underline>Yuri (YA)</TextDecoration> e o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://youtu.be/s6BBaH6-bIo?t=2954">
           próprio Inoue (OR)
         </TextDecoration>
         . Em transmissões recentes do canal, venceu alguns dos jogadores mais
         fortes da atualidade, como o
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=PqfiQXEaA_E&t=39740s&ab_channel=%E3%82%A4%E3%83%8E%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A5%E3%82%A22nd">
           Chance (MA)
         </TextDecoration>
         , o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=p4-uaWa9jLo&t=4952s&ab_channel=%E3%82%A4%E3%83%8E%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A5%E3%82%A2inocultureStreetFighterIII3rdSTRIKE">
           Michael-tan (CH)
         </TextDecoration>{" "}
         e o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=oWmSR6wrbOc&t=9840s&ab_channel=%E3%82%A4%E3%83%8E%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A5%E3%82%A2inocultureStreetFighterIII3rdSTRIKE">
           SHO (YU)
         </TextDecoration>
         .
@@ -1712,34 +1714,34 @@ export const Ken = () => {
       <Text>
         Entre seus resultados notáveis, estão as vitórias em FT10 contra o
         fortíssimo{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=9hnuH0O2XI0&ab_channel=hismit">
           Nitto (YU)
         </TextDecoration>
         , o famoso{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=woNgWDldMUY&ab_channel=hismit">
           Sugiyama (NE)
         </TextDecoration>
         , o sólido <TextDecoration underline>Higa (IB)</TextDecoration> (parte
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=Bpy-Le41pak&ab_channel=hismit">
           1
         </TextDecoration>{" "}
         e{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=ohT_rkVDUA8&ab_channel=hismit">
           2
         </TextDecoration>
         ) e um set extremamente unilateral contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=H1uUA61nHJc&ab_channel=hismit">
           TM (Q)
         </TextDecoration>
         . Também teve uma FT10 acirrada contra o lendário{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=9orbQhnwQAE&ab_channel=TheShend">
           Kuroda (KE)
         </TextDecoration>
         .
       </Text>
       <Text>
         Em um evento{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=zZFZDppiYpY&ab_channel=elegiaque">
           Random 3v3
         </TextDecoration>{" "}
         (os jogadores aleatoriamente formavam trios e se enfrentavam), que
@@ -1756,11 +1758,11 @@ export const Ken = () => {
       </Text>
       Ainda, tinha bons resultados nos torneios de SBO e 3rd MANIAX e, nos
       Danisen,{" "}
-      <TextDecoration underline blue>
+      <TextDecoration underline blue href="http://www.game-versus.net/danisen/grade_old.html">
         garantiu sua colocação entre os primeiros da primeira lista
       </TextDecoration>{" "}
       e foi o{" "}
-      <TextDecoration underline blue>
+      <TextDecoration underline blue href="http://www.game-versus.net/danisen/grade.html">
         segundo colocado da segunda lista
       </TextDecoration>
       , atrás somente do Tominaga.
@@ -1783,44 +1785,44 @@ export const Ken = () => {
       <Text>
         Boss é pelo menos tão forte quanto o Matsuken, pois conseguiu jogar uma
         FT5 muito equilibrada contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://youtu.be/oxKp97eY9-I?t=1137">
           Deshiken (KE)
         </TextDecoration>{" "}
         antes de perder a FT20 subsequente. Também teve FT10 bem unilaterais
         contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=kh3uVfBqTgU&ab_channel=hismit">
           Mester (YU)
         </TextDecoration>{" "}
         e o
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=uoC9AX08sIA&ab_channel=hismit">
           Uraken (GO)
         </TextDecoration>
         , venceu convincentemente o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=mYNrxes6AnY&ab_channel=hismit">
           Raoh (CH)
         </TextDecoration>{" "}
         e venceu o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=Qpf_zCJGb5k&ab_channel=DeemoKun">
           Hirai (KE)
         </TextDecoration>
         .
       </Text>
       <Text>
         Mais recentemente, venceu o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=B1GfbM-Z1R4&ab_channel=3rdSTRIKE">
           Heboryu (KE)
         </TextDecoration>{" "}
         em FT10 com facilidade, saiu na vantagem durante um set casual contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=9Y_FbPkS2X8&ab_channel=3rdSTRIKE">
           Yomoda (DU)
         </TextDecoration>
         , estava vencendo o
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=GxX_XgFlduw&ab_channel=3rdSTRIKE">
           Kuni (RY)
         </TextDecoration>{" "}
         antes de curiosamente resetar a máquina e sair do set sem finalizá-lo e
         deu trabalho para o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=c9IMIq1cMTY&ab_channel=%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%B3GAME-NEWTON">
           SHO (YU)
         </TextDecoration>{" "}
         em uma FT10.
@@ -1830,11 +1832,11 @@ export const Ken = () => {
         <TextDecoration bold>Kuroda (クロダ)</TextDecoration> é uma lenda no
         jogo com quase todos os personagens, não sendo o Ken uma exceção; teve
         um bom set contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=bQ-gZY2Fuk8&ab_channel=acslayer">
           Deshiken (KE)
         </TextDecoration>{" "}
         e venceu o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=9orbQhnwQAE&ab_channel=TheShend">
           Matsuken (KE)
         </TextDecoration>{" "}
         em FT10 (de 3 rounds cada partida).
@@ -1844,31 +1846,31 @@ export const Ken = () => {
         <TextDecoration bold>Kashi (かし)</TextDecoration> são outros jogadores
         extremamente fortes, mas não têm aparecido com muita frequência; o Shie
         venceu uma FT10 contra o
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=mnkRStdZItI&ab_channel=hismit">
           Hayao (HU)
         </TextDecoration>{" "}
         anos atrás e garantiu{" "}
-        <TextDecoration underline>OCV contra um quinteto de Yun</TextDecoration>{" "}
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=-nArLBPlNUc&ab_channel=3rdSTRIKE">OCV contra um quinteto de Yun</TextDecoration>{" "}
         de elite durante a Pré-Coop Cup 2019, enquanto o Kashi teve ótimos sets
-        contra o<TextDecoration underline>Tominaga (MA)</TextDecoration> e o{" "}
-        <TextDecoration underline>Shinobu (UR)</TextDecoration>.
+        contra o<TextDecoration underline blue href="https://www.youtube.com/watch?v=6zrxzx_EpX8&ab_channel=3rdSTRIKE">Tominaga (MA)</TextDecoration> e o{" "}
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=lTbA-svNxNE&ab_channel=3rdSTRIKE">Shinobu (UR)</TextDecoration>.
       </Text>
       <Text>
         <TextDecoration bold>Mabodofu (マーボードーフ)</TextDecoration> teve
         sets acirrados em FT10 contra o Yone (YU)
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=HDX2emTfljY&ab_channel=3rdSTRIKEMATSUDO">
           duas vezes
         </TextDecoration>
         , o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=lTbA-svNxNE&ab_channel=3rdSTRIKE">
           Shino (MA)
         </TextDecoration>
         , o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=a9sJgBV3C9c&ab_channel=3rdSTRIKEMATSUDO">
           Mimora (MA)
         </TextDecoration>{" "}
         e o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=92-5NxWVh94&ab_channel=%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%B3GAME-NEWTON">
           Dudleyman (DU)
         </TextDecoration>
         .
@@ -1876,23 +1878,23 @@ export const Ken = () => {
       <Text>
         <TextDecoration bold>Heboryu (へぼりう)</TextDecoration> tem alguns
         resultados notáveis: já venceu convincentemente o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=2NfifxWkgl0&ab_channel=hismit">
           Misawa (KE)
         </TextDecoration>{" "}
         e o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=kx93tH8Xo5s&ab_channel=hismit">
           Decoy (GO)
         </TextDecoration>{" "}
         em FT10, não foi mal contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=UN7qu4YFids&ab_channel=hismit">
           Kuni (RY)
         </TextDecoration>
         , deu algum trabalho para o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=VPRJKhoInV0&ab_channel=3rdSTRIKE">
           Tominaga (MA)
         </TextDecoration>{" "}
         em set casual e, mais recentemente, deu trabalho para o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=A086AG3LZlE&ab_channel=3rdSTRIKE">
           Yakkun (YU)
         </TextDecoration>{" "}
         em set curto.
@@ -1900,11 +1902,11 @@ export const Ken = () => {
       <Text>
         <TextDecoration bold>Misawa (ミサワ)</TextDecoration> é um Ken que
         apareceu mais nos últimos anos; venceu o
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=R1PGwnAtih0&ab_channel=hismit">
           Match (GO)
         </TextDecoration>{" "}
         e o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=f_RUThfAsbE&ab_channel=%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%B3GAME-NEWTON">
           Tokura (YA)
         </TextDecoration>{" "}
         em FT10.
@@ -1914,11 +1916,11 @@ export const Ken = () => {
         <TextDecoration bold>Shinta (しんた)</TextDecoration> são bons jogadores
         de Ken que já fizeram OCV contra times de elite; o Shigeki venceu um
         time que contava com{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=-0n7TK7f75M&ab_channel=3rdSTRIKE">
           Dudleyman (DU) e Ruu (UR)
         </TextDecoration>
         , já o Shinta venceu um time que incluía
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=5BjRaCbLZ-s&ab_channel=3rdSTRIKE">
           YSB (HU) e Kuni (RY)
         </TextDecoration>
         .
@@ -1926,11 +1928,11 @@ export const Ken = () => {
       <Text>
         <TextDecoration bold>Hirai (平井)</TextDecoration> é um jogador veterano
         que não foi mal contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=Qpf_zCJGb5k&ab_channel=DeemoKun">
           Boss (KE)
         </TextDecoration>{" "}
         em FT10 nem contra o{" "}
-        <TextDecoration underline blue>
+        <TextDecoration underline blue href="https://www.youtube.com/watch?v=01ySdYijh8s&ab_channel=%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%B3GAME-NEWTON">
           Tominaga (MA)
         </TextDecoration>
         , mas parece não jogar mais.
