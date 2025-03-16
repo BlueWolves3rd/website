@@ -3,7 +3,7 @@ import { selectionScreenData } from "../utils/selectionScreenData";
 import interfaceImg from "../assets/character selection/interface.png";
 import selector from "../assets/selector.gif";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface CharacterIconProps {
   setCharacterData: React.Dispatch<
