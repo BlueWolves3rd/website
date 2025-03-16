@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 export const Card = ({
   children,
   href,
@@ -7,7 +5,6 @@ export const Card = ({
   children: Array<JSX.Element>;
   href?: string;
 }) => {
-  const navigate = useNavigate();
   return (
     <div
       onClick={() => {
