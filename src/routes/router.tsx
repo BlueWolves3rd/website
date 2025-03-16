@@ -10,6 +10,7 @@ import { Outrange } from "../pages/scare/outrange.tsx";
 import { Ken } from "../pages/riddler/ken.tsx";
 import { LidandoComMakoto } from "../pages/scare/lidandoComMakoto.tsx";
 import { NocoesIniciais } from "../pages/scare/nocoesIniciais.tsx";
+import { Makoto } from "../pages/riddler/makoto.tsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/ken",
         element: <Ken />,
+      },
+      {
+        path: "/makoto",
+        element: <Makoto />,
       },
       {
         path: "/nocoes",

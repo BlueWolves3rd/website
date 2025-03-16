@@ -3,6 +3,7 @@ import { selectionScreenData } from "../utils/selectionScreenData";
 import interfaceImg from "../assets/character selection/interface.png";
 import selector from "../assets/selector.gif";
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 interface CharacterIconProps {
   setCharacterData: React.Dispatch<
@@ -44,6 +45,7 @@ export const SelectionScreen = () => {
   const [characterData, setCharacterData] = useState(
     selectionScreenData.get("alex"),
   );
+  const navigate = useNavigate();
   return (
     <div className="justify-center flex w-[960px] h-[560px]">
       <div className="w-full z-[1] relative">
@@ -69,6 +71,11 @@ export const SelectionScreen = () => {
         />
         <img
           src={selector}
+          onClick={() => {
+            if (characterData?.href) {
+              navigate(characterData?.href);
+            }
+          }}
           style={{
             top: characterData?.top,
             left: characterData?.left,

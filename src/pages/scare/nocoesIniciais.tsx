@@ -26,7 +26,6 @@ export const NocoesIniciais = () => {
           MOVIMENTAÇÃO
         </Header>
         <Text>
-          {" "}
           Antes de apertar qualquer botão, você vai ter de se posicionar com o
           seu personagem. Pulos e dashes são tentadores, mas ambos tem um risco:
           Você não pode defender durante a duração dos mesmos. Por isso,
@@ -34,11 +33,11 @@ export const NocoesIniciais = () => {
           oponente é importante.
         </Text>
         <Text>
-          Um grande ponto do jogo é apenas em se posicionar. Seu objetivo é
-          andar, entrar no alcance do seu golpe e apertá-lo no oponente, ao
-          invés de jogar o golpe no vento. Isso porque cada golpe também possui
-          um risco onde um golpe oponente logo após pode bater no seu botão e
-          vencer.{" "}
+          Um grande ponto do jogo é apenas se posicionar. Seu objetivo é andar,
+          entrar no alcance do seu golpe e apertá-lo no oponente ao invés de
+          jogar o golpe no vento. Isso porque cada golpe também possui um risco
+          onde um golpe oponente logo após pode bater por cima do seu botão e
+          vencer.
         </Text>
         <Text>
           Por isso, frequentemente, você verá jogadores de todos os níveis
@@ -60,10 +59,12 @@ export const NocoesIniciais = () => {
         <Text>
           3rd Strike é um jogo com amplo foco na defesa e nas reações do
           jogador. É mais lento e pesado que outros jogos de luta e com a adição
-          do parry, quase tudo tem uma solução defensiva. É hábito de jogadores
-          iniciantes, acostumados com outros jogos de luta, levantarem (wake-up)
-          com golpes especiais ou jogarem muitos golpes especiais na defesa do
-          oponente.
+          do parry, quase tudo tem uma solução defensiva.
+        </Text>
+        <Text>
+          É hábito de jogadores iniciantes, acostumados com outros jogos de
+          luta, levantarem (wake-up) com golpes especiais ou jogarem muitos
+          golpes especiais na defesa do oponente.
         </Text>
         <Text>
           A questão é que, em 3rd Strike, se não usar esses golpes de maneira
@@ -73,8 +74,8 @@ export const NocoesIniciais = () => {
         <Text>
           Por isso, tome muito cuidado ao usar especiais de forma aleatória. Um
           dos grandes pontos do jogo é justamente defender esses riscos do
-          oponente e bater no oponente nesses momentos de desvantagem,
-          aproveitando a chance que o erro adversário permitiu.
+          oponente e bater no rival nesses momentos de desvantagem, aproveitando
+          a chance que o erro adversário permitiu.
         </Text>
         <Text>
           Além disso, sempre tente levantar e defender abaixado por uns 3

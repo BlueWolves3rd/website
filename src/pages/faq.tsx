@@ -40,12 +40,12 @@ export const Faq = () => {
         </Question>
         <Response>
           <p>
-            A temática foi (roubada) inspirada num jogo de cartas chamado
-            Monster Rancher: Battle Card Episode 2 do Playstation 1. Nesse jogo,
-            existem grupos de jogadores. Grupo dos músicos, grupo dos dragões,
-            enfim. Blue Wolves é o grupo dos jogadores mais suspeitos.
-            Trapaceiros, mentirosos, irritados e abusam de certos detalhes ou
-            acordos menos desejáveis.
+            A temática foi (<span className="line-through">roubada</span>)
+            inspirada num jogo de cartas chamado Monster Rancher: Battle Card
+            Episode 2 do Playstation 1. Nesse jogo, existem grupos de jogadores.
+            Grupo dos músicos, grupo dos dragões, enfim. Blue Wolves é o grupo
+            dos jogadores mais suspeitos. Trapaceiros, mentirosos, irritados e
+            abusam de certos detalhes ou acordos menos desejáveis.
           </p>
           <p>Por óbvio, o nosso Blue Wolves é bem mais adequado.</p>
         </Response>
@@ -182,7 +182,7 @@ export const Faq = () => {
           <p>
             Sinta-se livre! Não há método errado de jogar um jogo contanto que
             você se divirta, mas 3rd Strike tende a ser mais divertido quando
-            vencemos e
+            vencemos
           </p>
 
           <p>"O caminho da virtude é o mesmo da felicidade" – Aristóteles</p>

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = ({
   children,
@@ -95,6 +96,68 @@ export const NavSidebar = ({ list }: { list: TNavSidebarList }) => {
         })}
       </div>
     </div>
+  );
+};
+
+export const Move = ({
+  children,
+  src,
+  width,
+  id,
+}: {
+  children: string;
+  src?: string;
+  width?: string;
+  id?: string;
+}) => {
+  return (
+    <div id={id}>
+      <ul
+        className="mt-8 before:content-[''] before:absolute before:left-[-1.5rem]
+                    before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2
+                    before:bg-white before:rounded-full relative "
+      >
+        <li className="font-metropolis text-white">{children}</li>
+      </ul>
+      {src ? (
+        <div className="flex ml-4 mt-6 mb-8">
+          <img src={src} style={{ width: width ? width : "8rem" }} />
+        </div>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
+export const TextDecoration = ({
+  children,
+  blue,
+  red,
+  underline,
+  bold,
+  href,
+}: {
+  children: ReactNode | string;
+  blue?: boolean;
+  underline?: boolean;
+  bold?: boolean;
+  red?: boolean;
+  href?: string;
+}) => {
+  return (
+    <>
+      {" "}
+      <span
+        style={{
+          color: blue ? "#6b63fa" : red ? "red" : "white",
+          textDecorationLine: underline ? "underline" : "none",
+          fontFamily: bold ? "Metropolis-Black" : "Metropolis-semibold",
+        }}
+      >
+        {href ? <Link to={href}>{children}</Link> : <> {children}</>}
+      </span>
+    </>
   );
 };
 
