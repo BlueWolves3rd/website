@@ -14,13 +14,11 @@ export const MatchupTable = () => {
   };
 
   const Th = ({ children }: { children: ReactNode }) => {
-    return <th className="border-white border-2 w-14 h-12">{children}</th>;
+    return <th className="border-white border-2 w-14 h-10">{children}</th>;
   };
   const Td = ({ children }: { children: ReactNode }) => {
     return (
-      <td className="border-white border-2 w-14 h-12 text-center">
-        {children}
-      </td>
+      <td className="border-white border-2 w-8 h-8 text-center">{children}</td>
     );
   };
 
@@ -33,7 +31,7 @@ export const MatchupTable = () => {
   }) => {
     return (
       <tr onClick={openRow(characterPosition)}>
-        <td className="border-white border-2 p-2">{children}</td>
+        <td className="border-white border-2 text-center">{children}</td>
         {riddlerChart[characterPosition].map((e, key) => {
           return <Td key={key}>{e}</Td>;
         })}
@@ -79,7 +77,7 @@ export const MatchupTable = () => {
         {charts[9].map((e) => {
           return (
             <tr style={{ display: open[9] ? "table-row" : "none" }}>
-              <td className="p-2">{e.name}</td>
+              <td className="text-center">{e.name}</td>
               {e.chart.map((n) => {
                 return <Td> {n} </Td>;
               })}
