@@ -11,6 +11,7 @@ import { Ken } from "../pages/riddler/ken.tsx";
 import { LidandoComMakoto } from "../pages/scare/lidandoComMakoto.tsx";
 import { NocoesIniciais } from "../pages/scare/nocoesIniciais.tsx";
 import { Makoto } from "../pages/riddler/makoto.tsx";
+import { Matchups } from "../pages/matchups.tsx";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/nocoes",
         element: <NocoesIniciais />,
+      },
+      {
+        path: "/mu",
+        element: <Matchups />,
       },
       {
         path: "/scare",

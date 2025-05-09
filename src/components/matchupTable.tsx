@@ -1,133 +1,102 @@
-import chunAvatar from "../assets/chun-3s-avatar.png";
-import yunAvatar from "../assets/yun-3s-avatar.png";
-import kenAvatar from "../assets/ken-3s-avatar.png";
-import makotoAvatar from "../assets/makoto-3s-avatar.png";
-import dudleyAvatar from "../assets/dudley-3s-avatar.png";
-import yangAvatar from "../assets/yang-3s-avatar.png";
-import goukiAvatar from "../assets/akuma-3s-avatar.png";
-import urienAvatar from "../assets/urien-3s-avatar.png";
-import oroAvatar from "../assets/oro-3s-avatar.png";
-import ryuAvatar from "../assets/ryu-3s-avatar.png";
-import ibukiAvatar from "../assets/ibuki-3s-avatar.png";
-import elenaAvatar from "../assets/elena-3s-avatar.png";
-import necroAvatar from "../assets/necro-3s-avatar.png";
-import hugoAvatar from "../assets/hugo-3s-avatar.png";
-import alexAvatar from "../assets/alex-3s-avatar.png";
-import qAvatar from "../assets/q-3s-avatar.png";
-import remyAvatar from "../assets/remy-3s-avatar.png";
-import twelveAvatar from "../assets/twelve-3s-avatar.png";
-import seanAvatar from "../assets/sean-3s-avatar.png";
+import { ReactNode, useState } from "react";
+import riddlerChart from "../utils/matchupData/theRiddler.json";
+import charts from "../utils/matchupData/charts.json";
 
-const charactersImages = [
-  chunAvatar,
-  yunAvatar,
-  kenAvatar,
-  makotoAvatar,
-  dudleyAvatar,
-  yangAvatar,
-  urienAvatar,
-  goukiAvatar,
-  oroAvatar,
-  ryuAvatar,
-  ibukiAvatar,
-  elenaAvatar,
-  necroAvatar,
-  hugoAvatar,
-  alexAvatar,
-  qAvatar,
-  remyAvatar,
-  twelveAvatar,
-  seanAvatar,
-];
+export const MatchupTable = () => {
+  const [open, setOpen] = useState<boolean[]>(Array(16).fill(false));
 
-const CharacterAvatarHead = ({ src }: { src?: string }) => {
-  return (
-    <th className="p-1 cursor-pointer">
-      <img className="object-cover min-w-12 max-w-12 h-12" src={src}></img>
-    </th>
-  );
-};
+  const openRow = (n: number) => {
+    return () => {
+      let aux = [...open];
+      aux[n] = !aux[n];
+      setOpen(aux);
+    };
+  };
 
-const CharacterAvatarCell = ({ src }: { src?: string }) => {
-  return (
-    <td className="p-1 cursor-pointer">
-      <img className="object-cover min-w-12 max-w-12 h-12" src={src}></img>
-    </td>
-  );
-};
+  const Th = ({ children }: { children: ReactNode }) => {
+    return <th className="border-white border-2 w-14 h-12">{children}</th>;
+  };
+  const Td = ({ children }: { children: ReactNode }) => {
+    return (
+      <td className="border-white border-2 w-14 h-12 text-center">
+        {children}
+      </td>
+    );
+  };
 
-const MatchupCell = ({ children }: { children: string }) => {
-  const getColor = (value: string) => {
-    const valueNumber = Number(value);
-    if (isNaN(valueNumber)) return "#cccccc";
-    if (valueNumber <= 2.5) return "#990000";
-    if (valueNumber <= 3.5) return "#cc0000";
-    if (valueNumber <= 4.5) return "#e06666";
-    if (valueNumber == 5) return "#f1c232";
-    if (valueNumber <= 6) return "#93c47d";
-    if (valueNumber <= 7) return "#6aa84f";
-    if (valueNumber > 7) return "#38761d";
+  const TableRow = ({
+    characterPosition,
+    children,
+  }: {
+    characterPosition: number;
+    children: string;
+  }) => {
+    return (
+      <tr onClick={openRow(characterPosition)}>
+        <td className="border-white border-2 p-2">{children}</td>
+        {riddlerChart[characterPosition].map((e, key) => {
+          return <Td key={key}>{e}</Td>;
+        })}
+      </tr>
+    );
   };
 
   return (
-    <td className="text-white text-center font-bold p-1 cursor-pointer hover:text-black">
-      <div
-        className="object-cover min-w-12 max-w-12 h-12 flex justify-center items-center font-bold"
-        style={{ backgroundColor: getColor(children) }}
-      >
-        {children}
-      </div>
-    </td>
-  );
-};
-
-const MatchTableRow = ({
-  data,
-  imgSrc,
-}: {
-  data: Array<string>;
-  imgSrc: string;
-}) => {
-  return (
-    <tr>
-      <CharacterAvatarCell src={imgSrc} />
-      {data.map((number: string, key) => {
-        return <MatchupCell key={key}>{number}</MatchupCell>;
-      })}
-      <CharacterAvatarCell src={imgSrc} />
-    </tr>
-  );
-};
-
-export const MatchupTableHead = () => {
-  return (
-    <thead>
-      <tr>
-        <th className="max-w-12 min-w-12" />
-        {charactersImages.map((image, key) => {
-          return <CharacterAvatarHead key={key} src={image} />;
+    <table className="text-white border-white border-2 text-xs">
+      <tbody>
+        <tr>
+          <Th> </Th>
+          <Th>Chun li</Th>
+          <Th>Yun</Th>
+          <Th>Ken</Th>
+          <Th>Makoto</Th>
+          <Th>Dudley</Th>
+          <Th>Yang</Th>
+          <Th>Gouki</Th>
+          <Th>Urien</Th>
+          <Th>Oro</Th>
+          <Th>Ryu</Th>
+          <Th>Ibuki</Th>
+          <Th>Elena</Th>
+          <Th>Necro</Th>
+          <Th>Hugo</Th>
+          <Th>Alex</Th>
+          <Th>Q</Th>
+          <Th>Remy</Th>
+          <Th>Twelve</Th>
+          <Th>Sean</Th>
+        </tr>
+        <TableRow characterPosition={0}>Chun Li</TableRow>
+        <TableRow characterPosition={1}>Yun</TableRow>
+        <TableRow characterPosition={2}>Ken</TableRow>
+        <TableRow characterPosition={3}>Makoto</TableRow>
+        <TableRow characterPosition={4}>Dudley</TableRow>
+        <TableRow characterPosition={5}>Yang</TableRow>
+        <TableRow characterPosition={6}>Gouki</TableRow>
+        <TableRow characterPosition={7}>Urien</TableRow>
+        <TableRow characterPosition={8}>Oro</TableRow>
+        <TableRow characterPosition={9}>Ryu</TableRow>
+        {charts[9].map((e) => {
+          return (
+            <tr style={{ display: open[9] ? "table-row" : "none" }}>
+              <td className="p-2">{e.name}</td>
+              {e.chart.map((n) => {
+                return <Td> {n} </Td>;
+              })}
+            </tr>
+          );
         })}
-      </tr>
-    </thead>
+        <TableRow characterPosition={10}>Ibuki</TableRow>
+        <TableRow characterPosition={11}>Elena</TableRow>
+        <TableRow characterPosition={12}>Necro</TableRow>
+        <TableRow characterPosition={13}>Hugo</TableRow>
+        <TableRow characterPosition={14}>Alex</TableRow>
+        <TableRow characterPosition={15}>Q</TableRow>
+        <TableRow characterPosition={16}>Remy</TableRow>
+        <TableRow characterPosition={17}>Twelve</TableRow>
+        <TableRow characterPosition={18}>Sean</TableRow>
+      </tbody>
+    </table>
   );
 };
-
-export const MatchupTableBody = ({
-  chart,
-}: {
-  chart: Array<Array<string>>;
-}) => {
-  return (
-    <tbody>
-      {charactersImages.map((image, key) => {
-        return <MatchTableRow imgSrc={image} key={key} data={chart[key]} />;
-      })}
-      <tr>
-        <th className="max-w-12 min-w-12" />
-        {charactersImages.map((image, key) => {
-          return <CharacterAvatarCell key={key} src={image} />;
-        })}
-      </tr>
-    </tbody>
-  );
-};
+/**/
