@@ -1,37 +1,102 @@
 import { ReactNode, useState } from "react";
+import { MdArrowForwardIos } from "react-icons/md";
 import riddlerChart from "../utils/matchupData/theRiddler.json";
 import charts from "../utils/matchupData/charts.json";
+import yang from "../assets/mu/yang_portrait.png";
+import yun from "../assets/mu/yu_portrait.png";
+import makoto from "../assets/mu/ma_portrait.png";
+import chun from "../assets/mu/ch_portrait.png";
+import ken from "../assets/mu/ke_portrait.png";
+import oro from "../assets/mu/or_portrait.png";
+import hugo from "../assets/mu/hu_portrait.png";
+import q from "../assets/mu/q_portrait.png";
+import necro from "../assets/mu/ne_portrait.png";
+import sean from "../assets/mu/se_portrait.png";
+import ryu from "../assets/mu/ry_portrait.png";
+import gouki from "../assets/mu/go_portrait.png";
+import elena from "../assets/mu/el_portrait.png";
+import twelve from "../assets/mu/tw_portrait.png";
+import urien from "../assets/mu/ur_portrait.png";
+import remy from "../assets/mu/re_portrait.png";
+import dudley from "../assets/mu/du_portrait.png";
+import alex from "../assets/mu/al_portrait.png";
+import ibuki from "../assets/mu/ib_portrait.png";
 
 export const MatchupTable = () => {
-  const [open, setOpen] = useState<boolean[]>(Array(16).fill(false));
+  const [openRows, setOpenRows] = useState<boolean[]>(Array(16).fill(false));
 
   const openRow = (n: number) => {
     return () => {
-      let aux = [...open];
+      let aux = [...openRows];
       aux[n] = !aux[n];
-      setOpen(aux);
+      setOpenRows(aux);
     };
   };
 
-  const Th = ({ children }: { children: ReactNode }) => {
-    return <th className="border-white border-2 w-14 h-10">{children}</th>;
-  };
-  const Td = ({ children }: { children: ReactNode }) => {
+  const Th = ({ children, img }: { children?: ReactNode; img?: string }) => {
     return (
-      <td className="border-white border-2 w-8 h-8 text-center">{children}</td>
+      <th className="border-white border-2 w-14 h-10 bg-slate-800">
+        <div className="flex justify-center">
+          {children}
+          <img src={img} />
+        </div>
+      </th>
+    );
+  };
+
+  const Td = ({ children }: { children: ReactNode }) => {
+    const colors = [
+      { value: 2, color: "#9B1B1B" },
+      { value: 3.5, color: "#C43A3A" },
+      { value: 4.5, color: "#E06B6B" },
+      { value: 5, color: "#E1AA33" },
+      { value: 6, color: "#6DAF59" },
+      { value: 7.5, color: "#3B8C3B" },
+      { value: 10, color: "#1F6E1F" },
+    ];
+
+    let color = "";
+
+    if (children == "—") {
+      return (
+        <td className="border-white border-2 w-8 h-8 text-center bg-zinc-500">
+          {children}
+        </td>
+      );
+    }
+
+    const val = Number(children);
+    color = colors.find((e) => val <= e.value)?.color ?? colors[3].color;
+
+    return (
+      <td
+        style={{ background: color }}
+        className="border-white border-2 w-8 h-8 text-center"
+      >
+        {children}
+      </td>
     );
   };
 
   const TableRow = ({
     characterPosition,
-    children,
+    img,
   }: {
     characterPosition: number;
-    children: string;
+    img?: string;
   }) => {
     return (
-      <tr onClick={openRow(characterPosition)}>
-        <td className="border-white border-2 text-center">{children}</td>
+      <tr onClick={openRow(characterPosition)} className="bg-slate-800">
+        <td className="border-white border-2 text-center">
+          <div className="flex flex-row items-center">
+            <img src={img} />
+            <MdArrowForwardIos
+              style={{
+                transform: openRows[characterPosition] ? "rotate(90deg)" : "",
+              }}
+            />
+          </div>
+        </td>
         {riddlerChart[characterPosition].map((e, key) => {
           return <Td key={key}>{e}</Td>;
         })}
@@ -43,56 +108,59 @@ export const MatchupTable = () => {
     <table className="text-white border-white border-2 text-xs">
       <tbody>
         <tr>
-          <Th> </Th>
-          <Th>Chun li</Th>
-          <Th>Yun</Th>
-          <Th>Ken</Th>
-          <Th>Makoto</Th>
-          <Th>Dudley</Th>
-          <Th>Yang</Th>
-          <Th>Gouki</Th>
-          <Th>Urien</Th>
-          <Th>Oro</Th>
-          <Th>Ryu</Th>
-          <Th>Ibuki</Th>
-          <Th>Elena</Th>
-          <Th>Necro</Th>
-          <Th>Hugo</Th>
-          <Th>Alex</Th>
-          <Th>Q</Th>
-          <Th>Remy</Th>
-          <Th>Twelve</Th>
-          <Th>Sean</Th>
+          <th className="bg-gray-500" />
+          <Th img={chun}></Th>
+          <Th img={yun}></Th>
+          <Th img={ken}></Th>
+          <Th img={makoto}></Th>
+          <Th img={dudley}></Th>
+          <Th img={yang}></Th>
+          <Th img={gouki}></Th>
+          <Th img={urien}></Th>
+          <Th img={oro}></Th>
+          <Th img={ryu}></Th>
+          <Th img={ibuki}></Th>
+          <Th img={elena}></Th>
+          <Th img={necro}></Th>
+          <Th img={hugo}></Th>
+          <Th img={alex}></Th>
+          <Th img={q}></Th>
+          <Th img={remy}></Th>
+          <Th img={twelve}></Th>
+          <Th img={sean}></Th>
         </tr>
-        <TableRow characterPosition={0}>Chun Li</TableRow>
-        <TableRow characterPosition={1}>Yun</TableRow>
-        <TableRow characterPosition={2}>Ken</TableRow>
-        <TableRow characterPosition={3}>Makoto</TableRow>
-        <TableRow characterPosition={4}>Dudley</TableRow>
-        <TableRow characterPosition={5}>Yang</TableRow>
-        <TableRow characterPosition={6}>Gouki</TableRow>
-        <TableRow characterPosition={7}>Urien</TableRow>
-        <TableRow characterPosition={8}>Oro</TableRow>
-        <TableRow characterPosition={9}>Ryu</TableRow>
-        {charts[9].map((e) => {
+        <TableRow characterPosition={0} img={chun}></TableRow>
+        <TableRow characterPosition={1} img={yun}></TableRow>
+        <TableRow characterPosition={2} img={ken}></TableRow>
+        <TableRow characterPosition={3} img={makoto}></TableRow>
+        <TableRow characterPosition={4} img={dudley}></TableRow>
+        <TableRow characterPosition={5} img={yang} />
+        <TableRow characterPosition={6} img={gouki}></TableRow>
+        <TableRow characterPosition={7} img={urien}></TableRow>
+        <TableRow characterPosition={8} img={oro}></TableRow>
+        <TableRow characterPosition={9} img={ryu}></TableRow>
+        {charts[9].map((e, key) => {
           return (
-            <tr style={{ display: open[9] ? "table-row" : "none" }}>
+            <tr
+              style={{ display: openRows[9] ? "table-row" : "none" }}
+              key={key}
+            >
               <td className="text-center">{e.name}</td>
-              {e.chart.map((n) => {
-                return <Td> {n} </Td>;
+              {e.chart.map((n, key) => {
+                return <Td key={key}>{n}</Td>;
               })}
             </tr>
           );
         })}
-        <TableRow characterPosition={10}>Ibuki</TableRow>
-        <TableRow characterPosition={11}>Elena</TableRow>
-        <TableRow characterPosition={12}>Necro</TableRow>
-        <TableRow characterPosition={13}>Hugo</TableRow>
-        <TableRow characterPosition={14}>Alex</TableRow>
-        <TableRow characterPosition={15}>Q</TableRow>
-        <TableRow characterPosition={16}>Remy</TableRow>
-        <TableRow characterPosition={17}>Twelve</TableRow>
-        <TableRow characterPosition={18}>Sean</TableRow>
+        <TableRow characterPosition={10} img={ibuki}></TableRow>
+        <TableRow characterPosition={11} img={elena}></TableRow>
+        <TableRow characterPosition={12} img={necro}></TableRow>
+        <TableRow characterPosition={13} img={hugo}></TableRow>
+        <TableRow characterPosition={14} img={alex}></TableRow>
+        <TableRow characterPosition={15} img={q}></TableRow>
+        <TableRow characterPosition={16} img={remy}></TableRow>
+        <TableRow characterPosition={17} img={twelve}></TableRow>
+        <TableRow characterPosition={18} img={sean}></TableRow>
       </tbody>
     </table>
   );
