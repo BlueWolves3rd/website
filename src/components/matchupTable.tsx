@@ -145,7 +145,7 @@ export const MatchupTable = () => {
               style={{ display: openRows[9] ? "table-row" : "none" }}
               key={key}
             >
-              <td className="text-center">{e.name}</td>
+              <td className="text-center bg-slate-800">{e.name}</td>
               {e.chart.map((n, key) => {
                 return <Td key={key}>{n}</Td>;
               })}
