@@ -27,7 +27,7 @@ export const MatchupTable = () => {
 
   const openRow = (n: number) => {
     return () => {
-      let aux = [...openRows];
+      const aux = [...openRows];
       aux[n] = !aux[n];
       setOpenRows(aux);
     };
@@ -35,7 +35,7 @@ export const MatchupTable = () => {
 
   const Th = ({ children, img }: { children?: ReactNode; img?: string }) => {
     return (
-      <th className="border-white border-2 w-14 h-10 bg-slate-800">
+      <th className="border-[#121212] border-4 w-12 h-10 bg-slate-800">
         <div className="flex justify-center">
           {children}
           <img src={img} />
@@ -55,23 +55,21 @@ export const MatchupTable = () => {
       { value: 10, color: "#1F6E1F" },
     ];
 
-    let color = "";
-
     if (children == "—") {
       return (
-        <td className="border-white border-2 w-8 h-8 text-center bg-zinc-500">
+        <td className="border-[#121212] border-4 w-8 h-8 text-center bg-zinc-500">
           {children}
         </td>
       );
     }
 
     const val = Number(children);
-    color = colors.find((e) => val <= e.value)?.color ?? colors[3].color;
+    const color = colors.find((e) => val <= e.value)?.color ?? colors[3].color;
 
     return (
       <td
         style={{ background: color }}
-        className="border-white border-2 w-8 h-8 text-center"
+        className="border-[#121212] border-4 w-8 h-8 text-center"
       >
         {children}
       </td>
@@ -87,10 +85,11 @@ export const MatchupTable = () => {
   }) => {
     return (
       <tr onClick={openRow(characterPosition)} className="bg-slate-800">
-        <td className="border-white border-2 text-center">
-          <div className="flex flex-row items-center">
+        <td className="border-[#121212] border-4 text-center w-16 h-8">
+          <div className="flex flex-row justify-center items-center gap-[2px]">
             <img src={img} />
             <MdArrowForwardIos
+              className="text-white"
               style={{
                 transform: openRows[characterPosition] ? "rotate(90deg)" : "",
               }}
@@ -105,7 +104,7 @@ export const MatchupTable = () => {
   };
 
   return (
-    <table className="text-white border-white border-2 text-xs">
+    <table className="text-zinc-200 border-[#121212] border-4 text-md">
       <tbody>
         <tr>
           <th className="bg-gray-500" />
