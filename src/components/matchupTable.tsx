@@ -35,7 +35,7 @@ export const MatchupTable = () => {
 
   const Th = ({ children, img }: { children?: ReactNode; img?: string }) => {
     return (
-      <th className="border-[#121212] border-4 w-12 h-10 bg-slate-800">
+      <th className="border-[#121212] border-4 w-12 h-10 bg-[#121212]">
         <div className="flex justify-center">
           {children}
           <img src={img} />
@@ -84,7 +84,7 @@ export const MatchupTable = () => {
     img?: string;
   }) => {
     return (
-      <tr onClick={openRow(characterPosition)} className="bg-slate-800">
+      <tr onClick={openRow(characterPosition)} className="bg-[#121212]">
         <td className="border-[#121212] border-4 text-center w-16 h-8">
           <div className="flex flex-row justify-center items-center gap-[2px]">
             <img src={img} />
@@ -107,7 +107,7 @@ export const MatchupTable = () => {
     <table className="text-zinc-200 border-[#121212] border-4 text-md">
       <tbody>
         <tr>
-          <th className="bg-gray-500" />
+          <th className="bg-[#121212]" />
           <Th img={chun}></Th>
           <Th img={yun}></Th>
           <Th img={ken}></Th>
@@ -144,7 +144,7 @@ export const MatchupTable = () => {
               style={{ display: openRows[9] ? "table-row" : "none" }}
               key={key}
             >
-              <td className="text-center bg-slate-800">{e.name}</td>
+              <td className="text-center bg-[#121212]">{e.name}</td>
               {e.chart.map((n, key) => {
                 return <Td key={key}>{n}</Td>;
               })}
