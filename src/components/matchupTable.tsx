@@ -1,6 +1,5 @@
 import { ReactNode, useState } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
-import riddlerChart from "../utils/matchupData/theRiddler.json";
 import charts from "../utils/matchupData/charts.json";
 import yang from "../assets/mu/yang_portrait.png";
 import yun from "../assets/mu/yu_portrait.png";
@@ -77,27 +76,39 @@ export const MatchupTable = () => {
   };
 
   const TableRow = ({
-    characterPosition,
+    rowPosition,
     img,
   }: {
-    characterPosition: number;
+    rowPosition: number;
     img?: string;
   }) => {
+    const average = new Array<number>(19).fill(0);
+    charts[rowPosition].map((e) => {
+      for (let i = 0; i < e.chart.length; i++) {
+        average[i] += Number(e.chart[i]);
+      }
+    });
+
     return (
-      <tr onClick={openRow(characterPosition)} className="bg-[#121212]">
+      <tr onClick={openRow(rowPosition)} className="bg-[#121212]">
         <td className="border-[#121212] border-4 text-center w-16 h-8">
           <div className="flex flex-row justify-center items-center gap-[2px]">
             <img src={img} />
             <MdArrowForwardIos
               className="text-white"
               style={{
-                transform: openRows[characterPosition] ? "rotate(90deg)" : "",
+                transform: openRows[rowPosition] ? "rotate(90deg)" : "",
               }}
             />
           </div>
         </td>
-        {riddlerChart[characterPosition].map((e, key) => {
-          return <Td key={key}>{e}</Td>;
+
+        {average.map((e, key) => {
+          return (
+            <Td key={key}>
+              {isNaN(e) ? "—" : (e / charts[rowPosition].length).toFixed(1)}
+            </Td>
+          );
         })}
       </tr>
     );
@@ -128,16 +139,16 @@ export const MatchupTable = () => {
           <Th img={twelve}></Th>
           <Th img={sean}></Th>
         </tr>
-        <TableRow characterPosition={0} img={chun}></TableRow>
-        <TableRow characterPosition={1} img={yun}></TableRow>
-        <TableRow characterPosition={2} img={ken}></TableRow>
-        <TableRow characterPosition={3} img={makoto}></TableRow>
-        <TableRow characterPosition={4} img={dudley}></TableRow>
-        <TableRow characterPosition={5} img={yang} />
-        <TableRow characterPosition={6} img={gouki}></TableRow>
-        <TableRow characterPosition={7} img={urien}></TableRow>
-        <TableRow characterPosition={8} img={oro}></TableRow>
-        <TableRow characterPosition={9} img={ryu}></TableRow>
+        <TableRow rowPosition={0} img={chun}></TableRow>
+        <TableRow rowPosition={1} img={yun}></TableRow>
+        <TableRow rowPosition={2} img={ken}></TableRow>
+        <TableRow rowPosition={3} img={makoto}></TableRow>
+        <TableRow rowPosition={4} img={dudley}></TableRow>
+        <TableRow rowPosition={5} img={yang} />
+        <TableRow rowPosition={6} img={gouki}></TableRow>
+        <TableRow rowPosition={7} img={urien}></TableRow>
+        <TableRow rowPosition={8} img={oro}></TableRow>
+        <TableRow rowPosition={9} img={ryu}></TableRow>
         {charts[9].map((e, key) => {
           return (
             <tr
@@ -151,15 +162,15 @@ export const MatchupTable = () => {
             </tr>
           );
         })}
-        <TableRow characterPosition={10} img={ibuki}></TableRow>
-        <TableRow characterPosition={11} img={elena}></TableRow>
-        <TableRow characterPosition={12} img={necro}></TableRow>
-        <TableRow characterPosition={13} img={hugo}></TableRow>
-        <TableRow characterPosition={14} img={alex}></TableRow>
-        <TableRow characterPosition={15} img={q}></TableRow>
-        <TableRow characterPosition={16} img={remy}></TableRow>
-        <TableRow characterPosition={17} img={twelve}></TableRow>
-        <TableRow characterPosition={18} img={sean}></TableRow>
+        <TableRow rowPosition={10} img={ibuki}></TableRow>
+        <TableRow rowPosition={11} img={elena}></TableRow>
+        <TableRow rowPosition={12} img={necro}></TableRow>
+        <TableRow rowPosition={13} img={hugo}></TableRow>
+        <TableRow rowPosition={14} img={alex}></TableRow>
+        <TableRow rowPosition={15} img={q}></TableRow>
+        <TableRow rowPosition={16} img={remy}></TableRow>
+        <TableRow rowPosition={17} img={twelve}></TableRow>
+        <TableRow rowPosition={18} img={sean}></TableRow>
       </tbody>
     </table>
   );
