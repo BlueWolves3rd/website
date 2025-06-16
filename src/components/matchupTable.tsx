@@ -91,7 +91,9 @@ const TableRow = ({
       {average.map((e, key) => {
         return (
           <Td key={key}>
-            {isNaN(e) ? "—" : Math.round(e) / charts[rowPosition].length}
+            {isNaN(e)
+              ? "—"
+              : Math.round((e / charts[rowPosition].length) * 2) / 2}
           </Td>
         );
       })}
