@@ -16,15 +16,14 @@ const Th = ({ children, img }: { children?: ReactNode; img?: string }) => {
 
 const Td = ({ children }: { children: ReactNode }) => {
   const colors = [
-    { value: 2, color: "#9B1B1B" },
-    { value: 3.5, color: "#C43A3A" },
-    { value: 4.5, color: "#E06B6B" },
-    { value: 5, color: "#E1AA33" },
-    { value: 6, color: "#6DAF59" },
-    { value: 7.5, color: "#3B8C3B" },
-    { value: 10, color: "#1F6E1F" },
+    { value: 2, color: "#8A1212" },
+    { value: 3.5, color: "#B32B2B" },
+    { value: 4.5, color: "#D45050" },
+    { value: 5, color: "#CC9922" },
+    { value: 6, color: "#5E9B4F" },
+    { value: 7.5, color: "#307A30" },
+    { value: 10, color: "#175A17" },
   ];
-
   if (children == "—") {
     return (
       <td className="border-[#121212] border-4 w-8 h-8 text-center bg-zinc-500">
@@ -39,7 +38,7 @@ const Td = ({ children }: { children: ReactNode }) => {
   return (
     <td
       style={{ background: color }}
-      className="border-[#121212] border-4 w-8 h-8 text-center"
+      className="border-[#121212] border-4 w-8 h-8 text-center text-zinc-100"
     >
       {children}
     </td>
@@ -60,13 +59,12 @@ const TableRow = ({
   setOpenRows,
 }: TableRowProps) => {
   const average = new Array<number>(19).fill(0);
+
   charts[rowPosition].map((e) => {
     for (let i = 0; i < e.chart.length; i++) {
       average[i] += Number(e.chart[i]);
     }
   });
-
-  const numberOfcharts = charts[rowPosition].length;
 
   return (
     <tr
@@ -77,9 +75,10 @@ const TableRow = ({
       }}
       className="bg-[#121212]"
     >
-      <td className="border-[#121212] border-4 text-center w-16 h-8">
-        <div className="flex flex-row justify-center items-center gap-[2px]">
+      <td className="text-center w-20 h-8">
+        <div className="flex flex-row items-center ">
           <img src={img} />
+          <div className="flex grow" />
           <MdArrowForwardIos
             className="text-white"
             style={{
@@ -92,11 +91,7 @@ const TableRow = ({
       {average.map((e, key) => {
         return (
           <Td key={key}>
-            {isNaN(e)
-              ? "—"
-              : e % 1 == 0
-                ? e / numberOfcharts
-                : (e / numberOfcharts).toFixed(1)}
+            {isNaN(e) ? "—" : Math.round(e) / charts[rowPosition].length}
           </Td>
         );
       })}
@@ -105,7 +100,8 @@ const TableRow = ({
 };
 
 export const MatchupTable = () => {
-  const [openRows, setOpenRows] = useState<boolean[]>(Array(16).fill(false));
+  const [openRows, setOpenRows] = useState<boolean[]>(Array(19).fill(false));
+
   return (
     <table className="text-zinc-200 border-[#121212] border-4 text-md">
       <tbody>
@@ -134,7 +130,11 @@ export const MatchupTable = () => {
                     }}
                     key={key}
                   >
-                    <td className="text-center bg-[#121212]">{e.name}</td>
+                    <td className="text-center bg-[#121212] flex justify-center items-center  h-8">
+                      {e.name}
+                      <div className="flex grow" />
+                      <MdArrowForwardIos className="text-white" />
+                    </td>
                     {e.chart.map((n, key) => {
                       return <Td key={key}>{n}</Td>;
                     })}
