@@ -94,7 +94,7 @@ const TableRow = ({
             {isNaN(e)
               ? "—"
               : Math.round((e / charts[rowPosition].length) * 2) / 2}
-          </Td>
+          </Td> //((average) * 2) / 2
         );
       })}
     </tr>
@@ -133,8 +133,8 @@ export const MatchupTable = () => {
                     key={key}
                   >
                     <td className="text-center bg-[#121212] flex justify-center items-center  h-8">
-                      {e.name}
                       <div className="flex grow" />
+                      {e.name}
                       <MdArrowForwardIos className="text-white" />
                     </td>
                     {e.chart.map((n, key) => {
