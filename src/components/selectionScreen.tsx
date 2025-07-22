@@ -1,7 +1,7 @@
 import { MouseEvent } from "react";
-import { selectionScreenData } from "../utils/selectionScreenData";
-import interfaceImg from "../assets/character selection/interface.png";
-import selector from "../assets/selector.gif";
+import { selectionScreenData } from "@/utils/selectionScreenData";
+import interfaceImg from "@/assets/character selection/interface.png";
+import selector from "@/assets/selector.gif";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import { Fragment, ReactNode, useState } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
-import charts from "../utils/matchupData/charts.json";
-import { muImgs } from "../utils/muImgs";
+import charts from "@/utils/matchupData/charts.json";
+import { muImgs } from "@/utils/muImgs";
 
 const Th = ({ children, img }: { children?: ReactNode; img?: string }) => {
   return (
@@ -75,8 +75,8 @@ const TableRow = ({
       }}
       className="bg-[#121212]"
     >
-      <td className="text-center w-20 h-8">
-        <div className="flex flex-row items-center ">
+      <td className="text-center w-32 h-8 flex justify-end">
+        <div className="flex flex-row items-center">
           <img src={img} />
           <div className="flex grow" />
           <MdArrowForwardIos
@@ -94,7 +94,7 @@ const TableRow = ({
             {isNaN(e)
               ? "—"
               : Math.round((e / charts[rowPosition].length) * 2) / 2}
-          </Td> //((average) * 2) / 2
+          </Td>
         );
       })}
     </tr>
@@ -105,7 +105,7 @@ export const MatchupTable = () => {
   const [openRows, setOpenRows] = useState<boolean[]>(Array(19).fill(false));
 
   return (
-    <table className="text-zinc-200 border-[#121212] border-4 text-md">
+    <table className="text-zinc-200 border-[#121212] border-4 text-md mr-28">
       <tbody>
         <tr>
           <th className="bg-[#121212]" />
@@ -132,7 +132,7 @@ export const MatchupTable = () => {
                     }}
                     key={key}
                   >
-                    <td className="text-center bg-[#121212] flex justify-center items-center  h-8">
+                    <td className="text-center bg-[#121212] flex justify-center items-center h-8">
                       <div className="flex grow" />
                       {e.name}
                       <MdArrowForwardIos className="text-white" />

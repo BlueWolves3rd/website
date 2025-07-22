@@ -89,7 +89,7 @@ export const NavSidebar = ({ list }: { list: TNavSidebarList }) => {
                 col-span-3 text-xl bg-[#181818] text-justify items-center 
             pt-8 relative border-[#969696] border-r-4"
     >
-      <div className="flex flex-col items-center fixed w-[300px]">
+      <div className="flex flex-col items-center fixed w-[300px] ml-4">
         <div className="p-2 w-full text-2xl">CONTEÚDO</div>
         {list.map((item, key) => {
           return <NavSidebarItem item={item} key={key} />;
@@ -169,10 +169,10 @@ export const Article = ({
   navSidebarList: TNavSidebarList;
 }) => {
   return (
-    <div className="w-full grid  grid-cols-12 bg-[#121212] font-metropolis-semibold gap-12 min-h-screen">
+    <div className="w-full grid grid-cols-12 bg-primary font-metropolis-semibold min-h-screen">
       <NavSidebar list={navSidebarList} />
       <div className="flex justify-center text-zinc-300 text-lg w-full col-span-9 pb-8">
-        <div className="max-w-screen-lg">{children}</div>
+        <div className="max-w-screen-lg px-12">{children}</div>
       </div>
     </div>
   );

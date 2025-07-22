@@ -1,9 +1,9 @@
 import { MdEmail } from "react-icons/md";
 import { FaDiscord } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import { Card } from "../components/card";
-import { KofiIcon } from "../components/kofiIcon.tsx";
-import bgImage from "../assets/contato/uriaahhhhhhhhh.png";
+import { Card } from "@/components/card";
+import { KofiIcon } from "@/components/kofiIcon.tsx";
+import bgImage from "@/assets/contato/uriaahhhhhhhhh.png";
 
 export const Contato = () => {
   return (

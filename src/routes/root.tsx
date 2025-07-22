@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Menu from "../components/menu.tsx";
+import Menu from "@/components/menu.tsx";
 
 const Root = () => {
   return (

@@ -4,29 +4,29 @@ import {
   Text,
   Move,
   TextDecoration,
-} from "../../components/article.tsx";
+} from "@/components/article.tsx";
 
-import makotoStance from "../../assets/riddler/makoto/makotostance.gif";
-import crLK from "../../assets/riddler/makoto/crLK.gif";
-import stLK from "../../assets/riddler/makoto/stLK.gif";
-import crMP from "../../assets/riddler/makoto/crMP.gif";
-import stMP from "../../assets/riddler/makoto/stMP.gif";
-import crMK from "../../assets/riddler/makoto/crMK.gif";
-import _6mp from "../../assets/riddler/makoto/6mp.gif";
-import crHP from "../../assets/riddler/makoto/crHP.gif";
-import crHK from "../../assets/riddler/makoto/crHK.gif";
-import _6hp from "../../assets/riddler/makoto/6HP.gif";
-import jMK from "../../assets/riddler/makoto/jMK.gif";
-import jHK from "../../assets/riddler/makoto/jHK.gif";
-import jHP from "../../assets/riddler/makoto/jHP.gif";
-import hayate from "../../assets/riddler/makoto/hayate.gif";
-import karakusa from "../../assets/riddler/makoto/karakusa.gif";
-import oroshi from "../../assets/riddler/makoto/oroshi.gif";
-import tsurugi from "../../assets/riddler/makoto/tsurugi.gif";
-import fukiage from "../../assets/riddler/makoto/fuki.gif";
-import mimora from "../../assets/riddler/mimora.gif";
-import tominaga from "../../assets/riddler/tominaga.gif";
-import haitani from "../../assets/riddler/haitani.gif";
+import makotoStance from "@/assets/riddler/makoto/makotostance.gif";
+import crLK from "@/assets/riddler/makoto/crLK.gif";
+import stLK from "@/assets/riddler/makoto/stLK.gif";
+import crMP from "@/assets/riddler/makoto/crMP.gif";
+import stMP from "@/assets/riddler/makoto/stMP.gif";
+import crMK from "@/assets/riddler/makoto/crMK.gif";
+import _6mp from "@/assets/riddler/makoto/6mp.gif";
+import crHP from "@/assets/riddler/makoto/crHP.gif";
+import crHK from "@/assets/riddler/makoto/crHK.gif";
+import _6hp from "@/assets/riddler/makoto/6HP.gif";
+import jMK from "@/assets/riddler/makoto/jMK.gif";
+import jHK from "@/assets/riddler/makoto/jHK.gif";
+import jHP from "@/assets/riddler/makoto/jHP.gif";
+import hayate from "@/assets/riddler/makoto/hayate.gif";
+import karakusa from "@/assets/riddler/makoto/karakusa.gif";
+import oroshi from "@/assets/riddler/makoto/oroshi.gif";
+import tsurugi from "@/assets/riddler/makoto/tsurugi.gif";
+import fukiage from "@/assets/riddler/makoto/fuki.gif";
+import mimora from "@/assets/riddler/mimora.gif";
+import tominaga from "@/assets/riddler/tominaga.gif";
+import haitani from "@/assets/riddler/haitani.gif";
 
 export const Makoto = () => {
   const navSidebarList = [

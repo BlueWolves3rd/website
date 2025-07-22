@@ -4,26 +4,26 @@ import {
   Text,
   Move,
   TextDecoration,
-} from "../../components/article.tsx";
+} from "@/components/article.tsx";
 
-import kenStance from "../../assets/riddler/kenstance.gif";
-import crLK from "../../assets/riddler/crLK.gif";
-import crMP from "../../assets/riddler/crMP.gif";
-import crMK from "../../assets/riddler/crMK.gif";
-import crHK from "../../assets/riddler/crHK.gif";
-import clMP from "../../assets/riddler/clMP.gif";
-import farMP from "../../assets/riddler/farMP.gif";
-import stHK from "../../assets/riddler/stHK.gif";
-import jHK from "../../assets/riddler/jpHK.gif";
-import jMK from "../../assets/riddler/jpMK.gif";
-import dp from "../../assets/riddler/dp.gif";
-import tatsu from "../../assets/riddler/tatsu.gif";
-import hadou from "../../assets/riddler/hadou.gif";
-import chunStance from "../../assets/riddler/chun-listance.gif";
-import dudleyStance from "../../assets/riddler/dudleystance.gif";
-import makotoStance from "../../assets/riddler/makoto/makotostance.gif";
-import deshiken from "../../assets/riddler/deshiken.gif";
-import matsuken from "../../assets/riddler/matsuken.gif";
+import kenStance from "@/assets/riddler/kenstance.gif";
+import crLK from "@/assets/riddler/crLK.gif";
+import crMP from "@/assets/riddler/crMP.gif";
+import crMK from "@/assets/riddler/crMK.gif";
+import crHK from "@/assets/riddler/crHK.gif";
+import clMP from "@/assets/riddler/clMP.gif";
+import farMP from "@/assets/riddler/farMP.gif";
+import stHK from "@/assets/riddler/stHK.gif";
+import jHK from "@/assets/riddler/jpHK.gif";
+import jMK from "@/assets/riddler/jpMK.gif";
+import dp from "@/assets/riddler/dp.gif";
+import tatsu from "@/assets/riddler/tatsu.gif";
+import hadou from "@/assets/riddler/hadou.gif";
+import chunStance from "@/assets/riddler/chun-listance.gif";
+import dudleyStance from "@/assets/riddler/dudleystance.gif";
+import makotoStance from "@/assets/riddler/makoto/makotostance.gif";
+import deshiken from "@/assets/riddler/deshiken.gif";
+import matsuken from "@/assets/riddler/matsuken.gif";
 
 export const Ken = () => {
   const navSidebarList = [
