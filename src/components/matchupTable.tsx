@@ -1,133 +1,153 @@
-import chunAvatar from "../assets/chun-3s-avatar.png";
-import yunAvatar from "../assets/yun-3s-avatar.png";
-import kenAvatar from "../assets/ken-3s-avatar.png";
-import makotoAvatar from "../assets/makoto-3s-avatar.png";
-import dudleyAvatar from "../assets/dudley-3s-avatar.png";
-import yangAvatar from "../assets/yang-3s-avatar.png";
-import goukiAvatar from "../assets/akuma-3s-avatar.png";
-import urienAvatar from "../assets/urien-3s-avatar.png";
-import oroAvatar from "../assets/oro-3s-avatar.png";
-import ryuAvatar from "../assets/ryu-3s-avatar.png";
-import ibukiAvatar from "../assets/ibuki-3s-avatar.png";
-import elenaAvatar from "../assets/elena-3s-avatar.png";
-import necroAvatar from "../assets/necro-3s-avatar.png";
-import hugoAvatar from "../assets/hugo-3s-avatar.png";
-import alexAvatar from "../assets/alex-3s-avatar.png";
-import qAvatar from "../assets/q-3s-avatar.png";
-import remyAvatar from "../assets/remy-3s-avatar.png";
-import twelveAvatar from "../assets/twelve-3s-avatar.png";
-import seanAvatar from "../assets/sean-3s-avatar.png";
+import { Fragment, ReactNode, useState } from "react";
+import { MdArrowForwardIos } from "react-icons/md";
+import charts from "@/utils/matchupData/charts.json";
+import { muImgs } from "@/utils/muImgs";
 
-const charactersImages = [
-  chunAvatar,
-  yunAvatar,
-  kenAvatar,
-  makotoAvatar,
-  dudleyAvatar,
-  yangAvatar,
-  urienAvatar,
-  goukiAvatar,
-  oroAvatar,
-  ryuAvatar,
-  ibukiAvatar,
-  elenaAvatar,
-  necroAvatar,
-  hugoAvatar,
-  alexAvatar,
-  qAvatar,
-  remyAvatar,
-  twelveAvatar,
-  seanAvatar,
-];
-
-const CharacterAvatarHead = ({ src }: { src?: string }) => {
+const Th = ({ children, img }: { children?: ReactNode; img?: string }) => {
   return (
-    <th className="p-1 cursor-pointer">
-      <img className="object-cover min-w-12 max-w-12 h-12" src={src}></img>
+    <th className="border-[#121212] border-4 w-12 h-10 bg-[#121212]">
+      <div className="flex justify-center">
+        {children}
+        <img src={img} />
+      </div>
     </th>
   );
 };
 
-const CharacterAvatarCell = ({ src }: { src?: string }) => {
-  return (
-    <td className="p-1 cursor-pointer">
-      <img className="object-cover min-w-12 max-w-12 h-12" src={src}></img>
-    </td>
-  );
-};
-
-const MatchupCell = ({ children }: { children: string }) => {
-  const getColor = (value: string) => {
-    const valueNumber = Number(value);
-    if (isNaN(valueNumber)) return "#cccccc";
-    if (valueNumber <= 2.5) return "#990000";
-    if (valueNumber <= 3.5) return "#cc0000";
-    if (valueNumber <= 4.5) return "#e06666";
-    if (valueNumber == 5) return "#f1c232";
-    if (valueNumber <= 6) return "#93c47d";
-    if (valueNumber <= 7) return "#6aa84f";
-    if (valueNumber > 7) return "#38761d";
-  };
-
-  return (
-    <td className="text-white text-center font-bold p-1 cursor-pointer hover:text-black">
-      <div
-        className="object-cover min-w-12 max-w-12 h-12 flex justify-center items-center font-bold"
-        style={{ backgroundColor: getColor(children) }}
-      >
+const Td = ({ children }: { children: ReactNode }) => {
+  const colors = [
+    { value: 2, color: "#8A1212" },
+    { value: 3.5, color: "#B32B2B" },
+    { value: 4.5, color: "#D45050" },
+    { value: 5, color: "#CC9922" },
+    { value: 6, color: "#5E9B4F" },
+    { value: 7.5, color: "#307A30" },
+    { value: 10, color: "#175A17" },
+  ];
+  if (children == "—") {
+    return (
+      <td className="border-[#121212] border-4 w-8 h-8 text-center bg-zinc-500">
         {children}
-      </div>
+      </td>
+    );
+  }
+
+  const val = Number(children);
+  const color = colors.find((e) => val <= e.value)?.color ?? colors[3].color;
+
+  return (
+    <td
+      style={{ background: color }}
+      className="border-[#121212] border-4 w-8 h-8 text-center text-zinc-100"
+    >
+      {children}
     </td>
   );
 };
 
-const MatchTableRow = ({
-  data,
-  imgSrc,
-}: {
-  data: Array<string>;
-  imgSrc: string;
-}) => {
+interface TableRowProps {
+  rowPosition: number;
+  img?: string;
+  openRows: Array<boolean>;
+  setOpenRows: React.Dispatch<React.SetStateAction<boolean[]>>;
+}
+
+const TableRow = ({
+  rowPosition,
+  img,
+  openRows,
+  setOpenRows,
+}: TableRowProps) => {
+  const average = new Array<number>(19).fill(0);
+
+  charts[rowPosition].map((e) => {
+    for (let i = 0; i < e.chart.length; i++) {
+      average[i] += Number(e.chart[i]);
+    }
+  });
+
   return (
-    <tr>
-      <CharacterAvatarCell src={imgSrc} />
-      {data.map((number: string, key) => {
-        return <MatchupCell key={key}>{number}</MatchupCell>;
+    <tr
+      onClick={() => {
+        const aux = [...openRows];
+        aux[rowPosition] = !aux[rowPosition];
+        setOpenRows(aux);
+      }}
+      className="bg-[#121212]"
+    >
+      <td className="text-center w-32 h-8 flex justify-end">
+        <div className="flex flex-row items-center">
+          <img src={img} />
+          <div className="flex grow" />
+          <MdArrowForwardIos
+            className="text-white"
+            style={{
+              transform: openRows[rowPosition] ? "rotate(90deg)" : "",
+            }}
+          />
+        </div>
+      </td>
+
+      {average.map((e, key) => {
+        return (
+          <Td key={key}>
+            {isNaN(e)
+              ? "—"
+              : Math.round((e / charts[rowPosition].length) * 2) / 2}
+          </Td>
+        );
       })}
-      <CharacterAvatarCell src={imgSrc} />
     </tr>
   );
 };
 
-export const MatchupTableHead = () => {
-  return (
-    <thead>
-      <tr>
-        <th className="max-w-12 min-w-12" />
-        {charactersImages.map((image, key) => {
-          return <CharacterAvatarHead key={key} src={image} />;
-        })}
-      </tr>
-    </thead>
-  );
-};
+export const MatchupTable = () => {
+  const [openRows, setOpenRows] = useState<boolean[]>(Array(19).fill(false));
 
-export const MatchupTableBody = ({
-  chart,
-}: {
-  chart: Array<Array<string>>;
-}) => {
   return (
-    <tbody>
-      {charactersImages.map((image, key) => {
-        return <MatchTableRow imgSrc={image} key={key} data={chart[key]} />;
-      })}
-      <tr>
-        <th className="max-w-12 min-w-12" />
-        {charactersImages.map((image, key) => {
-          return <CharacterAvatarCell key={key} src={image} />;
+    <table className="text-zinc-200 border-[#121212] border-4 text-md mr-28">
+      <tbody>
+        <tr>
+          <th className="bg-[#121212]" />
+          {muImgs.map((e, key) => {
+            return <Th img={e} key={key} />;
+          })}
+        </tr>
+        {muImgs.map((e, rowPosition) => {
+          return (
+            <Fragment key={rowPosition}>
+              <TableRow
+                rowPosition={rowPosition}
+                img={e}
+                key={rowPosition}
+                openRows={openRows}
+                setOpenRows={setOpenRows}
+              />
+
+              {charts[rowPosition].map((e, key) => {
+                return (
+                  <tr
+                    style={{
+                      display: openRows[rowPosition] ? "table-row" : "none",
+                    }}
+                    key={key}
+                  >
+                    <td className="text-center bg-[#121212] flex justify-center items-center h-8">
+                      <div className="flex grow" />
+                      {e.name}
+                      <MdArrowForwardIos className="text-white" />
+                    </td>
+                    {e.chart.map((n, key) => {
+                      return <Td key={key}>{n}</Td>;
+                    })}
+                  </tr>
+                );
+              })}
+            </Fragment>
+          );
         })}
-      </tr>
-    </tbody>
+      </tbody>
+    </table>
   );
 };
+/**/

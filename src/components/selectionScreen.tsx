@@ -1,13 +1,11 @@
 import { MouseEvent } from "react";
-import { selectionScreenData } from "../utils/selectionScreenData";
-import interfaceImg from "../assets/character selection/interface.png";
-import selector from "../assets/selector.gif";
+import { selectionScreenData } from "@/utils/selectionScreenData";
+import interfaceImg from "@/assets/character selection/interface.png";
+import selector from "@/assets/selector.gif";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const CharacterIcon = ({
-  setCharacterData,
-  data,
-}: {
+interface CharacterIconProps {
   setCharacterData: React.Dispatch<
     React.SetStateAction<
       | {
@@ -23,7 +21,9 @@ const CharacterIcon = ({
     top: string;
     left: string;
   };
-}) => {
+}
+
+const CharacterIcon = ({ data, setCharacterData }: CharacterIconProps) => {
   const onMouseOverHandler = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setCharacterData(data);
@@ -45,12 +45,14 @@ export const SelectionScreen = () => {
   const [characterData, setCharacterData] = useState(
     selectionScreenData.get("alex"),
   );
+  const navigate = useNavigate();
   return (
     <div className="justify-center flex w-[960px] h-[560px]">
       <div className="w-full z-[1] relative">
         <div className="z-30 w-[768px] absolute top-0 left-[230px]">
           <img src={interfaceImg} className="w-[960px] h-[560px]" />
         </div>
+
         {Array.from(selectionScreenData.entries()).map(([key, value]) => {
           return (
             <CharacterIcon
@@ -60,6 +62,7 @@ export const SelectionScreen = () => {
             />
           );
         })}
+
         <img
           src={characterData?.portrait}
           className="z-0 
@@ -68,6 +71,11 @@ export const SelectionScreen = () => {
         />
         <img
           src={selector}
+          onClick={() => {
+            if (characterData?.href) {
+              navigate(characterData?.href);
+            }
+          }}
           style={{
             top: characterData?.top,
             left: characterData?.left,

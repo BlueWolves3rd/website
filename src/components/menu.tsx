@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import bwLogo from "../assets/bw2.png";
+import bwLogo from "@/assets/bw2.png";
 
 const ButtonMenu = ({ to, children }: { to: string; children: string }) => {
   return (
@@ -14,8 +14,8 @@ const ButtonMenu = ({ to, children }: { to: string; children: string }) => {
 const Menu = () => {
   return (
     <div
-      className="font-bold text-white w-screen h-20 py-3 flex top-0
-            items-center shadow-md sticky bg-[#0b0b3d] font-pRegular justify-center z-[100]"
+      className="font-bold text-white w-full h-20 py-3 flex top-0
+            items-center shadow-md sticky bg-[#0b0b3d] font-chiquel justify-center z-[100]"
     >
       <div className="flex flex-row justify-between items-center 2xl:w-[1320px]">
         <div>
@@ -30,7 +30,7 @@ const Menu = () => {
 
         <div className="flex flex-row mr-[-7rem] font-bold cursor-pointer gap-12 text-[3.5pt]">
           <ButtonMenu to={"/faq"}>FAQ</ButtonMenu>
-          <ButtonMenu to={"/sobrenos"}>SOBRE NÒS</ButtonMenu>
+          <ButtonMenu to={"/sobrenos"}>SOBRE NÓS</ButtonMenu>
           <ButtonMenu to={"/contato"}>CONTATO</ButtonMenu>
         </div>
       </div>

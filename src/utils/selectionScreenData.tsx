@@ -20,7 +20,7 @@ import makotoPortrait from "../assets/character selection/makotoScreen.gif";
 
 export const selectionScreenData: Map<
   string,
-  { portrait: string; top: string; left: string }
+  { portrait: string; top: string; left: string; href?: string }
 > = new Map([
   ["chun", { portrait: chunPortrait, top: "204px", left: "755px" }],
   ["akuma", { portrait: akumaPortrait, top: "38px", left: "745px" }],
@@ -32,7 +32,7 @@ export const selectionScreenData: Map<
   ["q", { portrait: qPortrait, top: "145px", left: "785px" }],
   ["necro", { portrait: necroPortrait, top: "164px", left: "697px" }],
   ["ibuki", { portrait: ibukiPortrait, top: "228px", left: "675px" }],
-  ["ken", { portrait: kenPortrait, top: "370px", left: "770px" }],
+  ["ken", { portrait: kenPortrait, top: "370px", left: "770px", href: "/ken" }],
   ["hugo", { portrait: hugoPortrait, top: "305px", left: "789px" }],
   ["elena", { portrait: elenaPortrait, top: "247px", left: "813px" }],
   [
@@ -60,6 +60,7 @@ export const selectionScreenData: Map<
       portrait: makotoPortrait,
       top: "268px",
       left: "731px",
+      href: "/makoto",
     },
   ],
 ]);

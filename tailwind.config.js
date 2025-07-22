@@ -4,8 +4,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        pRegular: ["regular"],
+        chiquel: ["regular"],
         metropolis: ["Metropolis-Black"],
+        "metropolis-semibold": ["Metropolis-semibold"],
+      },
+      textColor: {
+        textBlue: "#6b6efa",
+      },
+      backgroundColor: {
+        primary: "#121212",
       },
       spacing: {
         alexLeft: "625px",

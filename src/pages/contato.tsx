@@ -1,9 +1,9 @@
 import { MdEmail } from "react-icons/md";
 import { FaDiscord } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import { Card } from "../components/card";
-import { KofiIcon } from "../components/kofiIcon.tsx";
-import bgImage from "../assets/contato/uriaahhhhhhhhh.png";
+import { Card } from "@/components/card";
+import { KofiIcon } from "@/components/kofiIcon.tsx";
+import bgImage from "@/assets/contato/uriaahhhhhhhhh.png";
 
 export const Contato = () => {
   return (
@@ -23,15 +23,15 @@ export const Contato = () => {
             <FaDiscord className="text-8xl text-[#7289da]" />
             <p className="text-xl"> scarecrow5676</p>
           </Card>
-          <Card>
+          <Card href="https://ko-fi.com/bluewolves">
             <KofiIcon className="text-8xl text-pink-400" />
             <p className="text-xl">KO-FI</p>
           </Card>
           <Card>
             <MdEmail className="text-8xl text-blue-500" />
-            <p className="text-xl">EMAIL</p>
+            <p className="text-sm">bluewolves3rd@gmail.com</p>
           </Card>
-          <Card>
+          <Card href="https://www.youtube.com/@bluewolves8855">
             <FaYoutube className="text-8xl text-red-600 " />
             <p className="text-xl">YOUTUBE</p>
           </Card>
