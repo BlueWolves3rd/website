@@ -4,7 +4,15 @@ import bwLogo from "@/assets/BW_logo.png";
 const ButtonMenu = ({ to, children }: { to: string; children: string }) => {
   return (
     <Link to={to}>
-      <span className="hover:text-[#453cf0] transition-colors duration-300 ease-in-out">
+      <span
+        className="hover:text-[#453cf0] transition-colors duration-300 ease-in-out 
+        bg-clip-text
+        text-transparent 
+        bg-gradient-to-b 
+        from-white 
+        via-gray-300 
+        to-gray-600"
+      >
         {children}
       </span>
     </Link>
@@ -29,7 +37,7 @@ const Menu = () => {
         text-transparent 
         bg-gradient-to-b 
         from-white 
-        via-gray-400 
+        via-gray-300 
         to-gray-600"
             >
               BLUE WOLVES
@@ -37,7 +45,7 @@ const Menu = () => {
           </Link>
         </div>
 
-        <div className="flex flex-row mr-[-7rem] font-bold cursor-pointer gap-12 text-[3.5pt]">
+        <div className="flex flex-row mr-[-7rem] font-bold cursor-pointer gap-12 text-[3.5pt] ">
           <ButtonMenu to={"/faq"}>FAQ</ButtonMenu>
           <ButtonMenu to={"/sobrenos"}>SOBRE NÓS</ButtonMenu>
           <ButtonMenu to={"/contato"}>CONTATO</ButtonMenu>

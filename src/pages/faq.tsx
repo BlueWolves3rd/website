@@ -5,7 +5,7 @@ export const Faq = () => {
   return (
     <div className="min-w-screen min-h-screen font-metropolis-semibold bg-primary">
       <div className="mx-96 mt-12 mb-12 flex flex-col gap-8">
-        <h2 className="text-white text-5xl font-metropolis">
+        <h2 className="text-white text-5xl font-metropolis ">
           FAQ - Perguntas Frequentes
         </h2>
         <h3 className="text-white text-2xl font-metropolis">
