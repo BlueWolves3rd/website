@@ -1,4 +1,4 @@
-import bwLogo from "@/assets/sobreNos/LOGO_BW-02-05.png";
+import bwLogo from "@/assets/BW_logo2.png";
 import banner from "@/assets/sobreNos/alex-banner-bg-blue.png";
 import bgImageHoje from "@/assets/sobreNos/20th.png";
 import bgImage2021 from "@/assets/sobreNos/ryu-vs-sagat-first-battle-drawn-by-motoki-yoshihara.jpg";

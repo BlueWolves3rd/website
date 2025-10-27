@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import bwLogo from "@/assets/bw2.png";
+import bwLogo from "@/assets/BW_logo.png";
 
 const ButtonMenu = ({ to, children }: { to: string; children: string }) => {
   return (
@@ -23,8 +23,17 @@ const Menu = () => {
             to="/"
             className="ml-4 cursor-pointer text-2xl flex flex-row gap-6 items-center"
           >
-            <img src={bwLogo} className="w-20" />
-            <span className="text-[6pt] text-[#3B3FE9]">BLUE WOLVES</span>
+            <img src={bwLogo} className="w-16" />
+            <span
+              className="text-[5pt] bg-clip-text p-2
+        text-transparent 
+        bg-gradient-to-b 
+        from-white 
+        via-gray-400 
+        to-gray-600"
+            >
+              BLUE WOLVES
+            </span>
           </Link>
         </div>
 

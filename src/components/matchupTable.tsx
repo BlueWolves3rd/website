@@ -1,6 +1,5 @@
 import { Fragment, ReactNode, useState } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
-import charts from "@/utils/matchupData/charts.json";
 import { muImgs } from "@/utils/muImgs";
 
 const Th = ({ children, img }: { children?: ReactNode; img?: string }) => {
@@ -24,6 +23,7 @@ const Td = ({ children }: { children: ReactNode }) => {
     { value: 7.5, color: "#307A30" },
     { value: 10, color: "#175A17" },
   ];
+
   if (children == "—") {
     return (
       <td className="border-[#121212] border-4 w-8 h-8 text-center bg-zinc-500">
@@ -32,8 +32,8 @@ const Td = ({ children }: { children: ReactNode }) => {
     );
   }
 
-  const val = Number(children);
-  const color = colors.find((e) => val <= e.value)?.color ?? colors[3].color;
+  const value = Number(children);
+  const color = colors.find((e) => value <= e.value)?.color ?? colors[3].color;
 
   return (
     <td
@@ -50,6 +50,8 @@ interface TableRowProps {
   img?: string;
   openRows: Array<boolean>;
   setOpenRows: React.Dispatch<React.SetStateAction<boolean[]>>;
+  charts: { name: string; character: string; chart: string[] }[][];
+  hasAverage: boolean;
 }
 
 const TableRow = ({
@@ -57,6 +59,8 @@ const TableRow = ({
   img,
   openRows,
   setOpenRows,
+  charts,
+  hasAverage,
 }: TableRowProps) => {
   const average = new Array<number>(19).fill(0);
 
@@ -68,12 +72,12 @@ const TableRow = ({
 
   return (
     <tr
+      className="bg-[#121212]"
       onClick={() => {
         const aux = [...openRows];
         aux[rowPosition] = !aux[rowPosition];
         setOpenRows(aux);
       }}
-      className="bg-[#121212]"
     >
       <td className="text-center w-32 h-8 flex justify-end">
         <div className="flex flex-row items-center">
@@ -83,6 +87,7 @@ const TableRow = ({
             className="text-white"
             style={{
               transform: openRows[rowPosition] ? "rotate(90deg)" : "",
+              display: hasAverage ? "block" : "none",
             }}
           />
         </div>
@@ -101,9 +106,13 @@ const TableRow = ({
   );
 };
 
-export const MatchupTable = () => {
-  const [openRows, setOpenRows] = useState<boolean[]>(Array(19).fill(false));
+interface MatchupTableProps {
+  charts: { name: string; character: string; chart: string[] }[][];
+  hasAverage: boolean;
+}
 
+export const MatchupTable = ({ charts, hasAverage }: MatchupTableProps) => {
+  const [openRows, setOpenRows] = useState<boolean[]>(Array(19).fill(false));
   return (
     <table className="text-zinc-200 border-[#121212] border-4 text-md mr-28">
       <tbody>
@@ -122,27 +131,33 @@ export const MatchupTable = () => {
                 key={rowPosition}
                 openRows={openRows}
                 setOpenRows={setOpenRows}
+                charts={charts}
+                hasAverage={hasAverage}
               />
 
-              {charts[rowPosition].map((e, key) => {
-                return (
-                  <tr
-                    style={{
-                      display: openRows[rowPosition] ? "table-row" : "none",
-                    }}
-                    key={key}
-                  >
-                    <td className="text-center bg-[#121212] flex justify-center items-center h-8">
-                      <div className="flex grow" />
-                      {e.name}
-                      <MdArrowForwardIos className="text-white" />
-                    </td>
-                    {e.chart.map((n, key) => {
-                      return <Td key={key}>{n}</Td>;
-                    })}
-                  </tr>
-                );
-              })}
+              {hasAverage ? (
+                charts[rowPosition].map((e, key) => {
+                  return (
+                    <tr
+                      style={{
+                        display: openRows[rowPosition] ? "table-row" : "none",
+                      }}
+                      key={key}
+                    >
+                      <td className="text-center bg-[#121212] flex justify-center items-center h-8">
+                        <div className="flex grow" />
+                        {e.name}
+                        <MdArrowForwardIos className="text-white" />
+                      </td>
+                      {e.chart.map((n, key) => {
+                        return <Td key={key}>{n}</Td>;
+                      })}
+                    </tr>
+                  );
+                })
+              ) : (
+                <></>
+              )}
             </Fragment>
           );
         })}
@@ -150,4 +165,3 @@ export const MatchupTable = () => {
     </table>
   );
 };
-/**/

@@ -1,28 +1,5 @@
-const Question = ({
-  children,
-  number,
-}: {
-  children: string;
-  number: string;
-}) => {
-  return (
-    <div className="z-0">
-      <h2 className="text-white text-2xl ">{`#${number}: ${children}`}</h2>
-    </div>
-  );
-};
-
-const Response = ({
-  children,
-}: {
-  children: Array<JSX.Element> | JSX.Element;
-}) => {
-  return (
-    <div className="bg-white p-5 text-xl flex flex-col gap-3 z-0">
-      {children}
-    </div>
-  );
-};
+import { Response } from "@/components/response";
+import { Question } from "@/components/question";
 
 export const Faq = () => {
   return (
