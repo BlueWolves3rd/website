@@ -18,7 +18,7 @@ export const Home = () => {
             <HomeButton img={kenSf2Idle} zoomImg={kenSf2Win} link="scare">
               Conteúdo do Scare
             </HomeButton>
-            <HomeButton img={muE} zoomImg={muS}>
+            <HomeButton img={muE} zoomImg={muS} link="conteudoRecurso">
               Conteúdo/Recursos
             </HomeButton>
             <HomeButton

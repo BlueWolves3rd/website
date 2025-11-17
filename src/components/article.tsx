@@ -14,7 +14,7 @@ export const Header = ({
   return (
     <div className="text-center" id={id}>
       <Tag
-        className="font-metropolis px-10 py-5 bg-[#ff0030] skew-x-[-24deg]
+        className="font-metropolis px-10 py-5 bg-[#3B3FE9] skew-x-[-24deg]
                 text-4xl inline-block font-bold mt-24 mb-8 text-white"
       >
         {children.toUpperCase()}

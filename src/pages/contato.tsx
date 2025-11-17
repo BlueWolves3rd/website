@@ -3,6 +3,7 @@ import { FaDiscord } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { Card } from "@/components/card";
 import { KofiIcon } from "@/components/kofiIcon.tsx";
+import { LinkTreeIcon } from "@/components/linkTreeIcon";
 import bgImage from "@/assets/contato/uriaahhhhhhhhh.png";
 
 export const Contato = () => {
@@ -19,21 +20,21 @@ export const Contato = () => {
       <div className="flex flex-col items-center mt-4 relative"></div>
       <div className="flex-grow w-full flex items-end mb-12">
         <div className="flex flex-row text-black w-full justify-center gap-24">
-          <Card>
-            <FaDiscord className="text-8xl text-[#7289da]" />
-            <p className="text-xl"> scarecrow5676</p>
+          <Card href="https://linktr.ee/bluewolves3rd">
+            <LinkTreeIcon className="text-8xl text-green-500" />
+            <p className="text-xl"></p>
           </Card>
           <Card href="https://ko-fi.com/bluewolves">
             <KofiIcon className="text-8xl text-pink-400" />
-            <p className="text-xl">KO-FI</p>
+            <p className="text-xl"></p>
           </Card>
           <Card>
             <MdEmail className="text-8xl text-blue-500" />
             <p className="text-sm">bluewolves3rd@gmail.com</p>
           </Card>
-          <Card href="https://www.youtube.com/@bluewolves8855">
+          <Card href="https://www.youtube.com/@bluewolves3rd">
             <FaYoutube className="text-8xl text-red-600 " />
-            <p className="text-xl">YOUTUBE</p>
+            <p className="text-xl"></p>
           </Card>
         </div>
       </div>

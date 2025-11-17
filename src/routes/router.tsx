@@ -12,12 +12,17 @@ import { LidandoComMakoto } from "@/pages/scare/lidandoComMakoto.tsx";
 import { NocoesIniciais } from "@/pages/scare/nocoesIniciais.tsx";
 import { Makoto } from "@/pages/riddler/makoto.tsx";
 import { Matchups } from "@/pages/matchups.tsx";
+import { ConteudoRecurso } from "@/pages/conteudoRecurso";
+import { GuiaIncial0 } from "@/pages/conteudoRecursos/guiaInicial/guiaInicial0";
+import { WorkInProgress } from "@/pages/workInProgress";
+import { IntroducaoGuiaInicial } from "@/pages/conteudoRecursos/guiaInicial/introducaoGuiaInicial";
+import { GuiaInicial1 } from "@/pages/conteudoRecursos/guiaInicial/guiaInicial1";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />,
+    errorElement: <WorkInProgress />,
     children: [
       {
         path: "/",
@@ -71,6 +76,31 @@ const router = createBrowserRouter([
             element: <Outrange />,
           },
         ],
+      },
+      {
+        path: "/conteudoRecurso",
+        children: [
+        {
+          path:"/conteudoRecurso",
+          element: <ConteudoRecurso/>
+        },
+        {
+          path:"introducaoGuiaInicial",
+          element: <IntroducaoGuiaInicial/>
+        },
+        {
+          path:"guiaInicial0",
+          element: <GuiaIncial0/>
+        },
+        {
+          path:"GuiaInicial1",
+          element: <GuiaInicial1/>
+        },
+        {
+          path:"workInProgress",
+          element: <WorkInProgress/>
+        },
+       ],
       },
     ],
   },
